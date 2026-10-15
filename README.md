@@ -8,7 +8,8 @@ fully moddable. Built on the Downtown Beatdown template (original README below).
 | | |
 | --- | --- |
 | `mods/base_game/` | All game content as data: 10 classes, skills, enemies, bosses, elites, items, affixes, uniques, sets, loot tables, stage segments, encounters, rifts, mutators |
-| `ragebound/` | Mod registry and schemas, loot, stats and combat math, rift director, hero progression, gameplay hooks, HUD, sprite pack importer, tools and tests |
+| `ragebound/` | Mod registry and schemas, loot, stats and combat math, rift director, stage assembler, hero progression, gameplay hooks, HUD, sprite pack importer, tools and tests |
+| `stages/segments/` | Street segments cut from `stage_01` that rifts are assembled from |
 | `examples/mods/` | A community pack showing new content, overrides and patches |
 
 ```sh
@@ -16,9 +17,11 @@ fully moddable. Built on the Downtown Beatdown template (original README below).
 godot --headless -s res://ragebound/tests/run_tests.gd
 godot --headless -s res://ragebound/tools/ragebound_cli.gd -- validate
 godot --headless -s res://ragebound/tools/ragebound_cli.gd -- rift --seed 7 --level 3
+godot --headless --fixed-fps 60 res://ragebound/tests/rift_stage_test.tscn
 ```
 
-In game, press **Tab** / **I** / gamepad **Back** to open the character sheet.
+Press Play and every run is a new procedurally assembled rift. In game, press **Tab** / **I** /
+gamepad **Back** to open the character sheet.
 
 ---
 

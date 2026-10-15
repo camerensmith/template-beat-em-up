@@ -11,7 +11,7 @@ signal transition_started
 
 #--- constants ------------------------------------------------------------------------------------
 
-const GAMEPLAY_SCENE = "res://stages/stage_01/stage_01.tscn"
+const GAMEPLAY_SCENE = "res://ragebound/stages/rift_stage.tscn"
 
 #--- public variables - order: export > normal var > onready --------------------------------------
 

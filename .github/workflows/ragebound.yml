@@ -1,4 +1,4 @@
-name: Ragebound tests and content validation
+name: Ragebound tests, content validation and rift play-through
 
 on:
   push:
@@ -32,3 +32,38 @@ jobs:
 
       - name: Validate base game and example mods
         run: '"$GODOT" --headless -s res://ragebound/tools/ragebound_cli.gd -- validate --mods res://mods,res://examples/mods'
+
+  playthrough:
+    runs-on: ubuntu-latest
+    env:
+      GODOT_VERSION: 4.0.4
+    steps:
+      - uses: actions/checkout@v4
+
+      # The assembled levels need the real art, which lives in Git LFS. Cache it between runs.
+      - name: List LFS assets
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+      - uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+      - name: Pull LFS assets
+        run: git lfs pull
+
+      - name: Download Godot
+        run: |
+          curl -sSL -o "$RUNNER_TEMP/godot.zip" \
+            "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP"
+          echo "GODOT=$RUNNER_TEMP/Godot_v${GODOT_VERSION}-stable_linux.x86_64" >> "$GITHUB_ENV"
+
+      # Importing ~1000 textures takes under a minute; the headless editor then doesn't exit by
+      # itself, so it runs under a timeout and the step checks the import happened.
+      - name: Import assets
+        run: |
+          timeout 240 "$GODOT" --headless --editor --quit-after 3000 || true
+          test -f .godot/global_script_class_cache.cfg
+          test "$(ls .godot/imported | wc -l)" -gt 500
+
+      - name: Play assembled rifts
+        run: '"$GODOT" --headless --fixed-fps 60 res://ragebound/tests/rift_stage_test.tscn'

@@ -11,7 +11,7 @@
 	],
 	"arena": {
 		"min_width": 1400,
-		"min_depth": 260
+		"min_depth": 400
 	},
 	"moves": [
 		"wrench_swing",

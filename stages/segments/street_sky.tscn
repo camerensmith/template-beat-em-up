@@ -1,0 +1,174 @@
+[gd_scene load_steps=36 format=3]
+
+[ext_resource type="Script" path="res://stages/stage_01/day_cycle_modulate.gd" id="1_2yyio"]
+[ext_resource type="Resource" path="res://stages/_base/day_cycle_data.tres" id="2_ppxcf"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/skyboxes/skybox.tscn" id="3_30i0q"]
+[ext_resource type="Shader" path="res://stages/_base/skyboxes/gradient_map.gdshader" id="4_bawtw"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/skyboxes/area_1_skybox_1_0.png" id="5_b1v5f"]
+[ext_resource type="Script" path="res://stages/stage_01/stage01_skybox.gd" id="6_1ipwe"]
+[ext_resource type="Script" path="res://stages/_base/skyboxes/skybox_gradient_transitioner.gd" id="7_ag83g"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/skyboxes/area_1_skybox_1_1.png" id="8_6l2we"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/skyboxes/area_1_skybox_1_2.png" id="9_8gf1b"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/skyboxes/area_1_skybox_1_3.png" id="10_oyurq"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/skyboxes/area_1_skybox_1_5.png" id="11_owf4i"]
+[ext_resource type="Script" path="res://stages/_base/skyboxes/skybox_extra_texture_data.gd" id="12_nofym"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/cityscape_00.png" id="13_kjuug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3tgxg"]
+shader = ExtResource("4_bawtw")
+
+[sub_resource type="Gradient" id="Gradient_odxjl"]
+offsets = PackedFloat32Array(0, 0.259, 0.435, 0.656, 0.972)
+colors = PackedColorArray(0, 0.0456241, 0.109756, 1, 0, 0.415686, 1, 1, 0.192556, 0.689018, 0.957944, 1, 0.42856, 0.80186, 0.972127, 1, 0.882353, 0.972549, 0.992157, 1)
+
+[sub_resource type="Gradient" id="Gradient_idkp3"]
+offsets = PackedFloat32Array(0, 0.258675, 0.719243, 0.84858, 0.971609)
+colors = PackedColorArray(0, 0.0557628, 0.134146, 1, 0, 0.415686, 1, 1, 0.192556, 0.689018, 0.957944, 1, 0.42856, 0.80186, 0.972127, 1, 0.882353, 0.972549, 0.992157, 1)
+
+[sub_resource type="Resource" id="Resource_h6m07"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_odxjl")
+to = SubResource("Gradient_idkp3")
+duration = 30.0
+debug_preview = 0.0
+
+[sub_resource type="Gradient" id="Gradient_ut85i"]
+offsets = PackedFloat32Array(0, 0.258675, 0.719243, 0.84858, 0.971609)
+colors = PackedColorArray(0, 0.0557628, 0.134146, 1, 0, 0.415686, 1, 1, 0.192556, 0.689018, 0.957944, 1, 0.42856, 0.80186, 0.972127, 1, 0.882353, 0.972549, 0.992157, 1)
+
+[sub_resource type="Gradient" id="Gradient_ija63"]
+offsets = PackedFloat32Array(0, 0.285, 0.466877, 0.883281, 1)
+colors = PackedColorArray(0.0268908, 0.00952381, 0.0347339, 1, 0.376471, 0.133333, 0.486275, 1, 0.490196, 0.247059, 0.8, 1, 0.972549, 0.639216, 0.580392, 1, 0.997048, 0.928841, 0.961117, 1)
+
+[sub_resource type="Resource" id="Resource_sjmqs"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_ut85i")
+to = SubResource("Gradient_ija63")
+duration = 5.0
+debug_preview = 1.0
+
+[sub_resource type="Gradient" id="Gradient_rnhx4"]
+offsets = PackedFloat32Array(0, 0.285, 0.466877, 0.883281, 1)
+colors = PackedColorArray(0.0268908, 0.00952381, 0.0347339, 1, 0.376471, 0.133333, 0.486275, 1, 0.490196, 0.247059, 0.8, 1, 0.972549, 0.639216, 0.580392, 1, 0.997048, 0.928841, 0.961117, 1)
+
+[sub_resource type="Gradient" id="Gradient_njad0"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.249902, 0.0809874, 0.550781, 1, 0.282583, 0.180845, 0.726451, 1, 0.372949, 0.339148, 0.660156, 1, 0.415679, 0.525154, 0.835938, 1)
+
+[sub_resource type="Resource" id="Resource_1vere"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_rnhx4")
+to = SubResource("Gradient_njad0")
+duration = 5.0
+debug_preview = 0.0
+
+[sub_resource type="Gradient" id="Gradient_cct8p"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.249902, 0.0809874, 0.550781, 1, 0.282583, 0.180845, 0.726451, 1, 0.372949, 0.339148, 0.660156, 1, 0.415679, 0.525154, 0.835938, 1)
+
+[sub_resource type="Gradient" id="Gradient_8k8fu"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.249902, 0.0809874, 0.550781, 1, 0.282583, 0.180845, 0.726451, 1, 0.372949, 0.339148, 0.660156, 1, 0.415679, 0.525154, 0.835938, 1)
+
+[sub_resource type="Resource" id="Resource_a1ksm"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_cct8p")
+to = SubResource("Gradient_8k8fu")
+duration = 30.0
+debug_preview = 0.0
+
+[sub_resource type="Gradient" id="Gradient_dq5t7"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.249902, 0.0809874, 0.550781, 1, 0.282583, 0.180845, 0.726451, 1, 0.372949, 0.339148, 0.660156, 1, 0.415679, 0.525154, 0.835938, 1)
+
+[sub_resource type="Gradient" id="Gradient_jh31g"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.53125, 0.173786, 0.266062, 1, 0.726451, 0.415128, 0.237444, 1, 0.929688, 0.680304, 0.246794, 1, 0.933594, 0.885445, 0.622605, 1)
+
+[sub_resource type="Resource" id="Resource_bkrwy"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_dq5t7")
+to = SubResource("Gradient_jh31g")
+duration = 5.0
+debug_preview = 1.0
+
+[sub_resource type="Gradient" id="Gradient_idw8v"]
+offsets = PackedFloat32Array(0.205, 0.49, 0.70347, 0.892744, 1)
+colors = PackedColorArray(0.135455, 0.0656743, 0.398438, 1, 0.53125, 0.173786, 0.266062, 1, 0.726451, 0.415128, 0.237444, 1, 0.929688, 0.680304, 0.246794, 1, 0.933594, 0.885445, 0.622605, 1)
+
+[sub_resource type="Resource" id="Resource_w6gr3"]
+script = ExtResource("7_ag83g")
+from = SubResource("Gradient_idw8v")
+to = SubResource("Gradient_odxjl")
+duration = 5.0
+debug_preview = 1.0
+
+[sub_resource type="Resource" id="Resource_4v2o3"]
+script = ExtResource("12_nofym")
+speed = 100
+color_mode = 1
+
+[sub_resource type="Resource" id="Resource_yrpxw"]
+script = ExtResource("12_nofym")
+speed = 20
+color_mode = 1
+
+[sub_resource type="Resource" id="Resource_der20"]
+script = ExtResource("12_nofym")
+speed = 40
+color_mode = 1
+
+[sub_resource type="Resource" id="Resource_p6j0y"]
+script = ExtResource("12_nofym")
+speed = 10
+color_mode = 1
+
+[node name="StreetSky" type="Node2D"]
+
+[node name="DayCycleModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0.972549, 0.917647, 1)
+script = ExtResource("1_2yyio")
+day_cycle_data = ExtResource("2_ppxcf")
+_color_day = Color(1, 0.972549, 0.917647, 1)
+_color_sunset = Color(0.776471, 0.458824, 0.407843, 1)
+_color_night = Color(0.278431, 0.211765, 0.478431, 1)
+_preview_time = 0
+
+[node name="SkyboxLayer" type="ParallaxBackground" parent="."]
+layer = -1
+scroll_offset = Vector2(0, -20)
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="SkyboxLayer"]
+position = Vector2(0, -20)
+motion_scale = Vector2(0, 1)
+
+[node name="Skybox" type="Sprite2D" parent="SkyboxLayer/ParallaxLayer1" instance=ExtResource("3_30i0q")]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3tgxg")
+position = Vector2(-8, -444)
+scale = Vector2(1.86482, 1.86482)
+texture = ExtResource("5_b1v5f")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 540)
+script = ExtResource("6_1ipwe")
+day_cycle_data = ExtResource("2_ppxcf")
+is_playing = true
+gradient_transitions_array = Array[ExtResource("7_ag83g")]([SubResource("Resource_h6m07"), SubResource("Resource_sjmqs"), SubResource("Resource_1vere"), SubResource("Resource_a1ksm"), SubResource("Resource_bkrwy"), SubResource("Resource_w6gr3")])
+_extra_textures = Array[Texture2D]([ExtResource("8_6l2we"), ExtResource("9_8gf1b"), ExtResource("10_oyurq"), ExtResource("11_owf4i")])
+extra_textures_data = {
+4117513665940559565: SubResource("Resource_4v2o3"),
+4785992317269572441: SubResource("Resource_yrpxw"),
+5981265806675957122: SubResource("Resource_der20"),
+9107773377900830858: SubResource("Resource_p6j0y")
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="SkyboxLayer"]
+position = Vector2(0, -20)
+motion_scale = Vector2(0.65, 1)
+motion_mirroring = Vector2(1188.06, 0)
+
+[node name="Sprite2d" type="Sprite2D" parent="SkyboxLayer/ParallaxLayer2"]
+position = Vector2(3730, 35.25)
+scale = Vector2(0.678503, 0.678503)
+texture = ExtResource("13_kjuug")

@@ -4,7 +4,7 @@
 		"name": "Alley Mouth",
 		"theme": "alley",
 		"width": 1400,
-		"depth": 240,
+		"depth": 400,
 		"roles": [
 			"combat",
 			"ambush",
@@ -25,7 +25,7 @@
 		"name": "Dumpster Row",
 		"theme": "alley",
 		"width": 1600,
-		"depth": 240,
+		"depth": 420,
 		"roles": [
 			"combat",
 			"ambush",
@@ -46,7 +46,7 @@
 		"name": "Dead End",
 		"theme": "alley",
 		"width": 1600,
-		"depth": 260,
+		"depth": 440,
 		"roles": [
 			"elite",
 			"event"

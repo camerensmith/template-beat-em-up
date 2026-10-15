@@ -12,7 +12,7 @@
 	],
 	"arena": {
 		"min_width": 1200,
-		"min_depth": 240
+		"min_depth": 360
 	},
 	"moves": [
 		"haymaker",

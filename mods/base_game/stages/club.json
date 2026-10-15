@@ -4,7 +4,7 @@
 		"name": "Velvet Rope",
 		"theme": "club",
 		"width": 1400,
-		"depth": 300,
+		"depth": 454,
 		"roles": [
 			"entry",
 			"combat"
@@ -24,7 +24,7 @@
 		"name": "Dancefloor",
 		"theme": "club",
 		"width": 2200,
-		"depth": 400,
+		"depth": 520,
 		"roles": [
 			"combat",
 			"elite",
@@ -50,7 +50,7 @@
 		"name": "VIP Lounge",
 		"theme": "club",
 		"width": 1400,
-		"depth": 300,
+		"depth": 454,
 		"roles": [
 			"elite",
 			"event"
@@ -73,7 +73,7 @@
 		"name": "Back Room",
 		"theme": "club",
 		"width": 1000,
-		"depth": 260,
+		"depth": 400,
 		"roles": [
 			"shop",
 			"event"

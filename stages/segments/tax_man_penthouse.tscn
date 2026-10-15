@@ -1,0 +1,214 @@
+[gd_scene load_steps=26 format=3]
+
+[ext_resource type="Script" path="res://ragebound/stages/rb_stage_segment.gd" id="1_01pk2"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_tree_leftside.png" id="2_6gsk4"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_tree_rightside.png" id="3_ufs5s"]
+[ext_resource type="Shader" path="res://stages/stage_01/hard_light.gdshader" id="4_r1ngp"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_windows.png" id="5_co17m"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_black_marble.png" id="6_ru8pr"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_floor_chess.png" id="7_vsk58"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/decorations/area_2_bamboo1_2.png" id="8_8ajif"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_pilar_leftside.png" id="9_5lxrd"]
+[ext_resource type="Script" path="res://stages/stage_01/tax_man_room_light.gd" id="10_cjdy1"]
+[ext_resource type="Resource" path="res://stages/_base/day_cycle_data.tres" id="11_dvl4v"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_sprite_repeater.gd" id="12_sr1r8"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_straight.png" id="13_yhvsd"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_curved.png" id="14_su07f"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/area_2_crosswalk.png" id="15_7ggm0"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/tax_man_streetlines.png" id="16_5saqu"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_throne.tscn" id="17_dae3a"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_throne_revised.png" id="18_gvctk"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/combat/collision_areas/quiver_wall_hit_box.gd" id="19_j30d2"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/combat/quiver_attack_data.gd" id="20_voi4f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe6v1"]
+shader = ExtResource("4_r1ngp")
+
+[sub_resource type="Gradient" id="Gradient_q1rff"]
+offsets = PackedFloat32Array(0, 0.379538, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.884488, 0.884488, 0.884488, 1, 0.0976562, 0.0976562, 0.0976562, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rxt3w"]
+gradient = SubResource("Gradient_q1rff")
+width = 1400
+height = 500
+fill = 1
+fill_from = Vector2(0.603352, 0.349693)
+fill_to = Vector2(0, 0.475798)
+
+[sub_resource type="Resource" id="Resource_awefh"]
+script = ExtResource("20_voi4f")
+attack_damage = 5.0
+hurt_type = 1
+knockback = 0
+launch_angle = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajt63"]
+size = Vector2(124, 1688)
+
+[node name="TaxManPenthouse" type="Node2D"]
+script = ExtResource("1_01pk2")
+width = 3770
+floor_top = 480.0
+floor_bottom = 1107.0
+walkable_end = 2985.0
+camera_top = -320
+camera_bottom = 1195
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="SakuraTree1" type="Sprite2D" parent="Background"]
+position = Vector2(-530, 321)
+scale = Vector2(1.0194, 1.0194)
+texture = ExtResource("2_6gsk4")
+
+[node name="SakuraTree2" type="Sprite2D" parent="Background"]
+position = Vector2(3777, 366)
+scale = Vector2(1.0194, 1.0194)
+texture = ExtResource("3_ufs5s")
+
+[node name="TaxManWindows" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.5)
+material = SubResource("ShaderMaterial_fe6v1")
+position = Vector2(1454.8, 259.75)
+scale = Vector2(1.0194, 1.0194)
+texture = ExtResource("5_co17m")
+
+[node name="MarbleGround" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(951, 820)
+texture = ExtResource("6_ru8pr")
+
+[node name="ChessFloor" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(960, 19)
+texture = ExtResource("7_vsk58")
+
+[node name="BambooVase5" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-2176, -538)
+texture = ExtResource("8_8ajif")
+
+[node name="BambooVase6" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1229, -538)
+texture = ExtResource("8_8ajif")
+
+[node name="MarblePillar1" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-2369, -746)
+texture = ExtResource("9_5lxrd")
+
+[node name="MarblePillar2" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1417, -746)
+texture = ExtResource("9_5lxrd")
+
+[node name="BambooVase4" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1556, -538)
+texture = ExtResource("8_8ajif")
+
+[node name="MarblePillar3" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2695, -746)
+texture = ExtResource("9_5lxrd")
+
+[node name="BambooVase7" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2533, -538)
+texture = ExtResource("8_8ajif")
+
+[node name="BambooVase3" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2779, -457)
+texture = ExtResource("8_8ajif")
+
+[node name="TaxManRoomLight" type="PointLight2D" parent="Background"]
+position = Vector2(1527, 396)
+enabled = false
+energy = 0.0
+texture = SubResource("GradientTexture2D_rxt3w")
+texture_scale = 4.0
+script = ExtResource("10_cjdy1")
+day_cycle_data = ExtResource("11_dvl4v")
+
+[node name="Pavement" type="Node2D" parent="Background"]
+position = Vector2(-11732, 650)
+script = ExtResource("12_sr1r8")
+is_vertical = false
+main_texture = ExtResource("13_yhvsd")
+offset = Vector2(0, 0)
+length = 6
+separation = -480
+cap_begin = ExtResource("14_su07f")
+cap_begin_offset = Vector2(-583, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0])
+
+[node name="CrossWalk1" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(2425, 0)
+texture = ExtResource("15_7ggm0")
+centered = false
+
+[node name="CrossWalk2" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(6268, 0)
+texture = ExtResource("15_7ggm0")
+centered = false
+
+[node name="WhiteLines" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(9216, -12)
+texture = ExtResource("16_5saqu")
+centered = false
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="TaxManThrone" type="Sprite2D" parent="Objects" instance=ExtResource("17_dae3a")]
+position = Vector2(3315, 763)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("18_gvctk")
+offset = Vector2(-21.332, -303)
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="CeilingLimits" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+collision_mask = 17
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/CeilingLimits"]
+polygon = PackedVector2Array(3770, 458.836, 3770, 480.005, 0, 480.952, 0, 383.721, 3697, 373)
+
+[node name="BottomLimit" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/BottomLimit"]
+polygon = PackedVector2Array(3055, 1238, 0, 1238, 0, 1107, 3055, 1107)
+
+[node name="Shape1" type="CollisionPolygon2D" parent="Collisions/BottomLimit"]
+polygon = PackedVector2Array(3770, 1325, 2985, 1325, 2985, -363, 3770, -363)
+
+[node name="ThroneBounce" type="Area2D" parent="Collisions"]
+position = Vector2(2827, 537)
+collision_layer = 256
+collision_mask = 0
+monitoring = false
+script = ExtResource("19_j30d2")
+character_type = 0
+attack_data = SubResource("Resource_awefh")
+metadata/collision_type = "world_hit_box"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/ThroneBounce"]
+modulate = Color(1, 0.0666667, 0.403922, 1)
+position = Vector2(220, -56)
+shape = SubResource("RectangleShape2D_ajt63")
+metadata/collision_type = "world_hit_box"
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="TaxManAfterEngage" type="Marker2D" parent="Markers" groups=["tax_man_engage_position"]]
+position = Vector2(2772, 861)
+
+[node name="DashPositionLeft" type="Marker2D" parent="Markers" groups=["tax_man_dash_positions"]]
+position = Vector2(566, 763)
+
+[node name="DashPositionRight" type="Marker2D" parent="Markers" groups=["tax_man_dash_positions"]]
+position = Vector2(2714, 772)
+
+[node name="BossSeat" type="Marker2D" parent="Markers" groups=["rb_boss_seat"]]
+position = Vector2(2908, 861)

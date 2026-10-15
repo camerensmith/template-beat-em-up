@@ -81,20 +81,40 @@ hard-coded stage script. Add a boss with a compatible arena and the director sta
 | Sprite pack standard, importer, role qualification, previewer | Done (`ragebound/sprites`, `ragebound/tools`) |
 | CLI: validate, preview rifts, roll loot, check sprite packs | Done (`ragebound/tools/ragebound_cli.gd`) |
 | Headless tests and CI | Done (`ragebound/tests`, `.github/workflows/ragebound.yml`) |
-| **Stage assembler** that instantiates segment scenes from a rift plan | Next: needs segment scenes cut from `stage_01` in the editor |
+| Stage assembler: builds each rift as a real level from segment scenes, with camera-locked rooms, waves, events, boss arenas and victory | Done (`ragebound/stages`) |
+| Seven street segments cut from `stage_01` by the stage slicer, plus greybox blockouts for alley, club and factory | Done (`stages/segments`, `ragebound/tools/stage_slicer.tscn`) |
+| Shop with real items, more event types, loot pickups in the world | Next (the shop is a street doc that heals for gold) |
 | Skill tree and inventory screens (skills auto-allocate, drops auto-equip for now) | Next |
 | New fighters and enemy bodies from sprite packs | Next: the content currently reuses Chad, Sargent and Tax Man bodies with tints |
 | Special inputs, grabs/throws for Grappler, fatality finishers | Next |
 | Local co-op | Later |
 
-### How the template's level and the rift plan meet today
+### How a rift becomes a level
 
-`stage_01` is still a single hand-built level. When a run starts, the director builds a rift
-plan, and as the stage spawns bodies, each one is matched with the next planned spawn that uses
-the same scene. So **which variant, elite or boss each body becomes comes from the plan**:
-names, tints, stats, elite modifiers, mutators and loot tables are all live. The room layout
-itself becomes procedural once segment scenes exist. The plan already lists the segment for
-every room.
+Pressing **Play** loads `ragebound/stages/rift_stage.tscn`. It asks the director for a plan,
+then for each room:
+
+1. Instances the room's **stage segment** scene, or builds a **greybox** blockout when the
+   segment has no art yet, and places it after the previous one.
+2. Clips the segment's Background and Foreground to its own width, so overhanging art never
+   bleeds into the neighbour. Props (gates, thrones) join the level's y-sorted layer so
+   characters walk behind and in front of them.
+3. Uses the segment's exact collision polygons, or builds a flat walkable band from its floor
+   values.
+4. Adds an **RbRiftRoom**. When the player crosses its trigger, the camera locks to the room and
+   the planned spawns walk in from off screen in waves of up to four, leaders first. Clearing
+   the room unlocks the camera forward and shows **GO! >>>**.
+
+Room roles change what happens: ambush and elite rooms announce themselves, minibosses and
+bosses get an intro line, the **shop** is a street doc that heals you for gold, and **rescue**
+and **challenge** events pay out an extra loot roll. In the boss room, a boss whose body
+supports it (the Tax Man) waits seated on the throne, gets up when you enter, and engages once
+his guards are down. Beating the boss opens the victory screen; restarting from it (or after a
+defeat) starts a new rift. Restarting from the pause menu replays the same rift.
+
+The original `stages/stage_01/stage_01.tscn` is still in the project as the source art for the
+slicer and can be run on its own (F6). There, the plan's spawns are matched to the bodies the
+hand-made stage spawns.
 
 ---
 
@@ -118,6 +138,9 @@ flowchart LR
     rb -- damage_modifiers / knockback_modifiers --> combat[CombatSystem<br/>template addon]
     rb -- node_added --> characters[Players and enemies<br/>in any stage]
     rb --> hud[HUD overlay]
+    director -- plan --> stage[RbRiftStage<br/>segments, clipping,<br/>collisions]
+    segments[stages/segments/*.tscn<br/>or RbGreyboxSegment] --> stage
+    stage --> rooms[RbRiftRoom per room<br/>camera lock, waves,<br/>events, boss]
 ```
 
 Design rules:
@@ -125,8 +148,9 @@ Design rules:
 - **Everything is content.** The base game is a mod (`mods/base_game`) loaded through the same
   code path as community packs. If the base game can do something, a mod can too.
 - **Pure logic, thin glue.** Registry, loot, stats, director, hero and importer are
-  `RefCounted` classes with no node dependencies, so they're unit tested headless. Only
-  `ragebound/run/ragebound.gd` touches the scene tree.
+  `RefCounted` classes with no node dependencies, so they're unit tested headless. The scene
+  tree is touched only by the `Ragebound` autoload and the stage assembler in
+  `ragebound/stages`.
 - **Deterministic.** Every generator takes an `RbRng`. `fork(label)` gives each system its own
   stream, so adding a roll to loot never reshuffles rift layouts. Same seed, same run.
 - **Minimal template changes.** The addon gained two hook lists on `CombatSystem`
@@ -139,8 +163,10 @@ Design rules:
 
 | What | How |
 | --- | --- |
-| Play | Open the project in Godot 4 and run it. A rift starts when the stage loads. Press **Tab**, **I** or gamepad **Back** for the character sheet. |
+| Play | Open the project in Godot 4 and run it, then press Play. Each run is a new rift. Press **Tab**, **I** or gamepad **Back** for the character sheet. |
 | Tests | `godot --headless -s res://ragebound/tests/run_tests.gd` |
+| Play-through test | `godot --headless --fixed-fps 60 res://ragebound/tests/rift_stage_test.tscn` builds four seeded rifts, checks the player can walk from start to boss, clears every room and beats the boss |
+| Re-cut street segments | Edit the slice list in `ragebound/tools/stage_slicer.gd`, then run `res://ragebound/tools/stage_slicer.tscn` |
 | Validate mods | `godot --headless -s res://ragebound/tools/ragebound_cli.gd -- validate` |
 | Preview a rift | `... ragebound_cli.gd -- rift --seed 7 --rift industrial_rift --level 4` (add `--json` for the raw plan) |
 | Roll loot | `... ragebound_cli.gd -- loot --ilvl 14 --count 10 --mf 200` or `--table boss` |
@@ -156,11 +182,11 @@ Example rift preview:
 ```
 Industrial Rift  (seed 7, rift level 4, monster level 6)
   mutators: base_game:blood_moon, base_game:iron_skin
-  1. entry   street_entry           quiet_start          runner, bruiser
-  2. combat  street_plaza           street_brawl         runner, ELITE[juggernaut] heavy, street_thug, heavy, runner
+  1. entry   storefront_corner      quiet_start          runner, bruiser
+  2. combat  torii_gate             street_brawl         runner, ELITE[juggernaut] heavy, street_thug, heavy, runner
   ...
-  5. elite   street_plaza           miniboss_showdown    MINIBOSS bouncer_king, street_thug, street_thug
-  6. event   chicken_king           challenge_arena      [challenge] ELITE[armored+berserker] street_thug, ...
+  5. elite   java_tiger_strip       miniboss_showdown    MINIBOSS bouncer_king, street_thug, street_thug
+  6. event   foster_mart            challenge_arena      [challenge] ELITE[armored+berserker] street_thug, ...
   7. combat  loading_dock           heavy_hitters        line_worker, ...
   8. boss    slaughterhouse_floor   boss_fight           BOSS iron_butcher, line_worker, line_worker, line_worker
 ```
@@ -234,7 +260,7 @@ still load.
 | `uniques` | unique | `base`, `rarity` (default legendary), `set`, `min_ilvl`, `stats`, `flavor` |
 | `sets` | set | `bonuses[] {pieces, stats}` |
 | `loot_tables` | loot_table | `rolls {min,max}`, `no_drop_weight`, `rarity_bonus`, `entries[] {kind: item, gold or table, weight, ...}` |
-| `stages` | stage_segment | `theme`, `scene`, `width`, `depth`, `roles[]`, `entry[]`, `exit[]`, `features[]`, `min_depth` |
+| `stages` | stage_segment | `theme`, `scene`, `width`, `depth` (walkable floor height in px), `roles[]`, `entry[]`, `exit[]`, `features[]`, `min_depth` |
 | `encounters` | encounter | `role`, `themes[]`, `archetypes[]`, `budget_mult`, `max_enemies`, `event`, `miniboss_chance` |
 | `rifts` | rift | `themes[]`, `steps[] {role, repeat {min,max}, chance}`, `base_budget`, `budget_per_room`, `elite_modifiers {min,max}`, `mutators {min,max}`, `monster_level_offset` |
 | `mutators` | mutator | `enemy_stats`, `player_stats`, `elite_chance_bonus`, `loot_bonus_pct`, `xp_bonus_pct` |
@@ -266,7 +292,7 @@ Caps and display formats are in [`ragebound/stats/rb_stats.gd`](../ragebound/sta
 	"tier": "boss",
 	"scene": "res://characters/enemies/tax_man/tax_man.tscn",
 	"themes": ["factory"],
-	"arena": {"min_width": 2400, "min_depth": 340, "features": ["walls", "hooks"]},
+	"arena": {"min_width": 2400, "min_depth": 500, "features": ["walls", "hooks"]},
 	"moves": ["cleaver_combo", "chain_grab", "ground_slam"],
 	"phases": [{"below_health": 0.5, "unlock": ["berserk_charge"], "stats": {"damage_pct": 35}}],
 	"stats": {"life_pct": 50, "damage_pct": 25, "armor": 20},
@@ -276,9 +302,40 @@ Caps and display formats are in [`ragebound/stats/rb_stats.gd`](../ragebound/sta
 }
 ```
 
-The director will only place it in a `factory` segment that is at least 2400×340 and has
+The director will only place it in a `factory` segment that is at least 2400 wide with a
+500 px deep floor, and has
 `walls` and `hooks`. Run `validate` to confirm every rift template can still always find a legal
 boss arena.
+
+### Stage segments
+
+A segment is a scene whose root uses `RbStageSegment`
+([`ragebound/stages/rb_stage_segment.gd`](../ragebound/stages/rb_stage_segment.gd)) and spans
+x = 0 to `width`. The assembler reads these children:
+
+| Child | Purpose |
+| --- | --- |
+| `Background`, `Foreground` | Art. Clipped to the segment's width, so it can overhang freely. Nodes with their own `z_index` keep their draw order. |
+| `Objects` | Props that y-sort with characters, such as gates and thrones. |
+| `Collisions` | Optional ceiling and floor bodies (layer 3, like the template's). Without them the floor runs from `floor_top` to `floor_bottom`, with a wall at `walkable_end` if set. |
+| `Markers` | Optional `Marker2D`s: `rb_spawn_point` (where enemies walk to), `rb_boss_seat` (seated boss intro), and any boss AI groups such as `tax_man_dash_positions`. |
+
+Point the segment's content entry at it with `"scene"` and keep `width` and `depth` in sync with
+the scene. The play-through test checks both. Without a scene, the segment is blocked out from
+its data with a palette per theme, so a mod can design layouts before any art exists.
+
+To cut more segments out of a hand-made stage, add entries to `SLICES` in
+[`ragebound/tools/stage_slicer.gd`](../ragebound/tools/stage_slicer.gd) and run the slicer
+scene. It copies every overlapping art node, moves props and boss markers, and cuts the stage's
+real collision polygons to each slice. Re-running overwrites the generated scenes, so make
+lasting changes in the source stage or in the slice list.
+
+Design tips:
+- Connectors (`entry`, `exit`) decide what can follow what. Give a segment that ends somewhere
+  special (like the torii gate's ramp) a dedicated connector, and the matching entry on the
+  segment that should come next.
+- Boss arenas declare `features` such as `walls` that bosses can require. A `walkable_end`
+  wall also stops enemies from entering on that side.
 
 ### Sprite packs
 
@@ -334,7 +391,7 @@ The template's own art is covered by [`LICENSE_ASSETS.txt`](../LICENSE_ASSETS.tx
 | Minibosses | 20-30 | 2 |
 | Major bosses | 15-25 | 2 (1 placeholder body) |
 | Environment themes | 12-20 | 4 (street, alley, club, factory) |
-| Stage segments | 100-150 | 17 (data; scenes pending) |
+| Stage segments | 100-150 | 17 (7 with art cut from `stage_01`, 10 greybox) |
 | Weapons | 80-120 | 5 bases |
 | Armor/accessory bases | 200+ | 15 |
 
@@ -347,10 +404,10 @@ missing before anyone wires it up.
 ## 7. Roadmap
 
 1. **Foundation**: done. Template combat plus the Ragebound data layer, hooks, HUD, tools and tests.
-2. **Vertical slice**: two full classes (Brawler, Grappler: data and skills done; Grappler
-   throws next), six enemies, an elite, two bosses, three environment themes, a 10-15 minute
-   `short_rift`. Remaining work: cut `stage_01` into segment scenes and build the stage assembler
-   that instantiates a rift plan.
+2. **Vertical slice**: playable now. Rifts are real levels assembled from segments, with two
+   classes (Brawler, Grappler: data and skills done; Grappler throws next), six enemies, elites,
+   two bosses and four themes. Remaining work: art for the alley, club and factory segments,
+   and a proper shop.
 3. **ARPG UI**: inventory and comparison, skill tree, loot beams and pickups instead of
    auto-loot.
 4. **Content pipeline**: sprite pack → character scene generator (hitboxes from `hit_frames`,

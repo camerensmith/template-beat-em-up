@@ -1,13 +1,31 @@
 [
 	{
-		"id": "street_entry",
-		"name": "Downtown Strip",
+		"id": "storefront_corner",
+		"name": "Storefront Corner",
 		"theme": "street",
-		"width": 1600,
-		"depth": 300,
+		"width": 2045,
+		"depth": 454,
 		"roles": [
-			"entry",
-			"combat"
+			"entry"
+		],
+		"entry": [],
+		"exit": [
+			"street"
+		],
+		"min_depth": 0,
+		"weight": 3,
+		"scene": "res://stages/segments/storefront_corner.tscn"
+	},
+	{
+		"id": "chicken_king",
+		"name": "Chicken King",
+		"theme": "street",
+		"width": 2015,
+		"depth": 454,
+		"roles": [
+			"combat",
+			"shop",
+			"event"
 		],
 		"entry": [
 			"street"
@@ -16,14 +34,15 @@
 			"street"
 		],
 		"min_depth": 0,
-		"weight": 1
+		"weight": 3,
+		"scene": "res://stages/segments/chicken_king.tscn"
 	},
 	{
-		"id": "street_block",
-		"name": "Shopfronts",
+		"id": "fence_skyline",
+		"name": "Skyline Fence",
 		"theme": "street",
-		"width": 1800,
-		"depth": 300,
+		"width": 2240,
+		"depth": 454,
 		"roles": [
 			"combat",
 			"ambush"
@@ -36,41 +55,42 @@
 			"alley_mouth"
 		],
 		"min_depth": 0,
-		"weight": 1
+		"weight": 3,
+		"scene": "res://stages/segments/fence_skyline.tscn"
 	},
 	{
-		"id": "street_crossing",
-		"name": "Crossing",
+		"id": "foster_mart",
+		"name": "Foster Mart",
 		"theme": "street",
-		"width": 1600,
-		"depth": 320,
+		"width": 1880,
+		"depth": 454,
 		"roles": [
 			"combat",
-			"event",
-			"shop"
+			"shop",
+			"event"
 		],
 		"entry": [
 			"street"
 		],
 		"exit": [
 			"street",
-			"alley_mouth",
 			"door",
 			"loading_dock"
 		],
 		"min_depth": 0,
-		"weight": 1
+		"weight": 3,
+		"scene": "res://stages/segments/foster_mart.tscn"
 	},
 	{
-		"id": "street_plaza",
-		"name": "Torii Plaza",
+		"id": "java_tiger_strip",
+		"name": "Fire Tiger Strip",
 		"theme": "street",
-		"width": 2400,
-		"depth": 360,
+		"width": 1720,
+		"depth": 454,
 		"roles": [
+			"combat",
 			"elite",
-			"boss",
-			"combat"
+			"ambush"
 		],
 		"entry": [
 			"street"
@@ -80,28 +100,49 @@
 			"door"
 		],
 		"min_depth": 0,
-		"weight": 1,
-		"features": [
-			"walls"
-		]
+		"weight": 3,
+		"scene": "res://stages/segments/java_tiger_strip.tscn"
 	},
 	{
-		"id": "chicken_king",
-		"name": "Chicken King",
+		"id": "torii_gate",
+		"name": "Torii Gate",
 		"theme": "street",
-		"width": 1200,
-		"depth": 280,
+		"width": 2400,
+		"depth": 454,
 		"roles": [
-			"shop",
-			"event"
+			"elite",
+			"combat"
 		],
 		"entry": [
 			"street"
 		],
 		"exit": [
+			"penthouse",
 			"street"
 		],
 		"min_depth": 0,
-		"weight": 1
+		"weight": 3,
+		"scene": "res://stages/segments/torii_gate.tscn"
+	},
+	{
+		"id": "tax_man_penthouse",
+		"name": "Tax Man's Penthouse",
+		"theme": "street",
+		"width": 3770,
+		"depth": 627,
+		"roles": [
+			"boss"
+		],
+		"entry": [
+			"penthouse",
+			"street"
+		],
+		"exit": [],
+		"min_depth": 0,
+		"weight": 3,
+		"features": [
+			"walls"
+		],
+		"scene": "res://stages/segments/tax_man_penthouse.tscn"
 	}
 ]

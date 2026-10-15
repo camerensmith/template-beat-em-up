@@ -1,0 +1,363 @@
+[gd_scene load_steps=47 format=3]
+
+[ext_resource type="Script" path="res://ragebound/stages/rb_stage_segment.gd" id="1_f8e8r"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_sprite_repeater.gd" id="2_vswex"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_straight.png" id="3_oe35x"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_curved.png" id="4_nl2jn"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/area_2_crosswalk.png" id="5_l8j7y"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/tax_man_streetlines.png" id="6_hk56o"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_fence.gd" id="7_kx8dl"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/fence/chainlink_fence_middle_pole.png" id="8_78mu2"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/fence/chainlink_fence_revised__00.png" id="9_baf45"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/fence/chainlink_fence_revised__01.png" id="10_8q4ag"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/fence/chainlink_fence_revised__02.png" id="11_5ws55"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/buildings/chicken_king/chicken_king.tscn" id="12_rghp1"]
+[ext_resource type="Script" path="res://stages/stage_01/stage_elements/buildings/chicken_king/chicken_king.gd" id="13_065lb"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/decorations/christmas_lights/christmas_lights.tscn" id="14_le3fy"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/decorations/christmas_lights/christmas_lights_1_50.png" id="15_vboma"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/decorations/lantern/lanterns.tscn" id="16_1nkdh"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/decorations/lantern/lanterns_1_50.png" id="17_i0p7t"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_tree_leftside.png" id="18_t7x0s"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_0.png" id="19_vrvnf"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_1.png" id="20_453ls"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_2.png" id="21_ya63j"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/decorations/area_2_bamboo1_2.png" id="22_ucjd1"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/vending_machines/vending_machines_clean_separated_yellow_50.png" id="23_v6dbs"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/vending_machines/vending_machine_tags_separated_3_50.png" id="24_thfp6"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/vending_machines/vending_machines_clean_separated_red_50.png" id="25_yhlbp"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/buildings/walls/brick_wall/brick_wall.tscn" id="26_wshql"]
+[ext_resource type="Shader" path="res://stages/_base/skyboxes/gradient_map.gdshader" id="27_2fm2c"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/walls/brick_wall/brick_pattern_grayscale.png" id="28_vxqsk"]
+[ext_resource type="Script" path="res://stages/stage_01/stage_elements/buildings/walls/brick_wall/brick_wall.gd" id="29_y4k5t"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/pipes/drainpipe_body.png" id="30_5k27q"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/pipes/drainpipe_exit.png" id="31_evg7m"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/windows/standard/windows_1_3_50.png" id="32_caf0q"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/doors/door_1_revised_new_50.png" id="33_h5xy4"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/buildings/windows/narrow/window_2.png" id="34_vm1l8"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_curve_50.png" id="35_h0htn"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/telephone_pole_revised_1_50.png" id="36_rdx6v"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/lamp_pole.tscn" id="37_8yu1d"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_revised_2_01_50.png" id="38_mhf2l"]
+[ext_resource type="Script" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/lamp_pole.gd" id="39_bni64"]
+[ext_resource type="Resource" path="res://stages/_base/day_cycle_data.tres" id="40_bxksl"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_light_map.png" id="41_3jojy"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_revised_2_00_50.png" id="42_iqu2y"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/post_box/postbox_tagged.png" id="43_ypqbl"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/post_box/postbox_clean.png" id="44_65o4n"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/metal_post.png" id="45_j147w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8ik0"]
+shader = ExtResource("27_2fm2c")
+
+[node name="ChickenKing" type="Node2D"]
+script = ExtResource("1_f8e8r")
+width = 2015
+floor_top = 653.0
+floor_bottom = 1107.0
+walkable_end = -1.0
+camera_top = -280
+camera_bottom = 1195
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Pavement" type="Node2D" parent="Background"]
+position = Vector2(-1477, 650)
+script = ExtResource("2_vswex")
+is_vertical = false
+main_texture = ExtResource("3_oe35x")
+offset = Vector2(0, 0)
+length = 6
+separation = -480
+cap_begin = ExtResource("4_nl2jn")
+cap_begin_offset = Vector2(-583, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0])
+
+[node name="CrossWalk1" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(2425, 0)
+texture = ExtResource("5_l8j7y")
+centered = false
+
+[node name="CrossWalk2" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(6268, 0)
+texture = ExtResource("5_l8j7y")
+centered = false
+
+[node name="WhiteLines" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(9216, -12)
+texture = ExtResource("6_hk56o")
+centered = false
+
+[node name="Fence1" type="Node2D" parent="Background"]
+position = Vector2(1177, 22.383)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_kx8dl")
+pole_texture = ExtResource("8_78mu2")
+pole_distance = 15
+is_vertical = false
+main_texture = ExtResource("9_baf45")
+offset = Vector2(0, 0)
+length = 75
+separation = 0
+cap_begin = ExtResource("10_8q4ag")
+cap_begin_offset = Vector2(-124, 0)
+cap_end = ExtResource("11_5ws55")
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+[node name="ChickenKing" type="Node2D" parent="Background" instance=ExtResource("12_rghp1")]
+position = Vector2(527, 505)
+script = ExtResource("13_065lb")
+use_banner = true
+use_window_covers = true
+
+[node name="ChristmasLights" type="Sprite2D" parent="Background/ChickenKing" instance=ExtResource("14_le3fy")]
+position = Vector2(-543, -623)
+scale = Vector2(1.49074, 1.49074)
+texture = ExtResource("15_vboma")
+centered = false
+
+[node name="Lanterns" type="Sprite2D" parent="Background/ChickenKing" instance=ExtResource("16_1nkdh")]
+texture_repeat = 2
+position = Vector2(-574, -862)
+scale = Vector2(1.40444, 1.40444)
+texture = ExtResource("17_i0p7t")
+centered = false
+region_rect = Rect2(0, 0, 1141.75, 225)
+
+[node name="SakuraTree1" type="Sprite2D" parent="Background/ChickenKing"]
+z_index = -1
+position = Vector2(635, -509)
+texture = ExtResource("18_t7x0s")
+
+[node name="SideWalk2" type="Node2D" parent="Background"]
+position = Vector2(-202.64, 482.217)
+script = ExtResource("2_vswex")
+is_vertical = false
+main_texture = ExtResource("19_vrvnf")
+offset = Vector2(0, 0)
+length = 42
+separation = -99
+cap_begin = null
+cap_begin_offset = Vector2(-451, 9)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([ExtResource("20_453ls"), ExtResource("21_ya63j")])
+variations_weights = Array[float]([0.831792, 1.60504, 0.563167])
+texture_sequence = Array[int]([1, 1, 0, 2, 2, 1, 1, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 2])
+
+[node name="BambooVase1" type="Sprite2D" parent="Background/SideWalk2"]
+position = Vector2(6882.64, -215.217)
+texture = ExtResource("22_ucjd1")
+
+[node name="BambooVase2" type="Sprite2D" parent="Background/SideWalk2"]
+position = Vector2(7620.64, -215.217)
+texture = ExtResource("22_ucjd1")
+
+[node name="VendingMachine3" type="Sprite2D" parent="Background"]
+position = Vector2(1835.25, 375.856)
+scale = Vector2(1.21205, 1.21205)
+texture = ExtResource("23_v6dbs")
+
+[node name="VendingMachine2" type="Sprite2D" parent="Background"]
+position = Vector2(1692.25, 374.856)
+scale = Vector2(1.21205, 1.21205)
+texture = ExtResource("24_thfp6")
+
+[node name="VendingMachine" type="Sprite2D" parent="Background"]
+position = Vector2(1508.25, 374.856)
+scale = Vector2(1.21205, 1.21205)
+texture = ExtResource("25_yhlbp")
+
+[node name="BrickBuilding2" type="Node2D" parent="Background"]
+position = Vector2(-1949, 0)
+
+[node name="BrickWall2" type="Sprite2D" parent="Background/BrickBuilding2" instance=ExtResource("26_wshql")]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_o8ik0")
+position = Vector2(1454.2, 13.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_vxqsk")
+region_enabled = true
+region_rect = Rect2(0, 0, 1842.37, 2206)
+script = ExtResource("29_y4k5t")
+color_darkest = Color(0.0392157, 0.027451, 0.14902, 1)
+color_shadow = Color(0.243137, 0.227451, 0.34902, 1)
+color_base = Color(0.380392, 0.368627, 0.486275, 1)
+color_highlights = Color(0.631373, 0.619608, 0.737255, 1)
+
+[node name="Pipe" type="Node2D" parent="Background/BrickBuilding2"]
+z_index = 1
+position = Vector2(1864, -564.905)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_vswex")
+is_vertical = true
+main_texture = ExtResource("30_5k27q")
+offset = Vector2(0, 0)
+length = 3
+separation = -38
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = ExtResource("31_evg7m")
+cap_end_offset = Vector2(7, -21)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0])
+
+[node name="Windows" type="Node2D" parent="Background/BrickBuilding2"]
+position = Vector2(1043, -360)
+script = ExtResource("2_vswex")
+is_vertical = true
+main_texture = ExtResource("32_caf0q")
+offset = Vector2(0, 0)
+length = 2
+separation = 100
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0])
+
+[node name="Door" type="Sprite2D" parent="Background/BrickBuilding2"]
+position = Vector2(1746, 335)
+texture = ExtResource("33_h5xy4")
+
+[node name="NarrowWindow" type="Sprite2D" parent="Background/BrickBuilding2"]
+position = Vector2(1746, -213)
+texture = ExtResource("34_vm1l8")
+
+[node name="SideWalk" type="Node2D" parent="Background"]
+position = Vector2(-1605.64, 541.217)
+script = ExtResource("2_vswex")
+is_vertical = false
+main_texture = ExtResource("19_vrvnf")
+offset = Vector2(0, 0)
+length = 49
+separation = -99
+cap_begin = ExtResource("35_h0htn")
+cap_begin_offset = Vector2(-451, 9)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([ExtResource("20_453ls"), ExtResource("21_ya63j")])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0, 2, 2, 0, 0, 1, 0, 2, 2, 1, 0, 0, 0, 1, 1, 0, 1, 0])
+
+[node name="TelefonePole" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(911.637, -522.217)
+texture = ExtResource("36_rdx6v")
+
+[node name="TelefonePole2" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(5091.64, -522.217)
+texture = ExtResource("36_rdx6v")
+
+[node name="LampPole1" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("37_8yu1d")]
+position = Vector2(840.637, -458.217)
+texture = ExtResource("38_mhf2l")
+script = ExtResource("39_bni64")
+day_cycle_data = ExtResource("40_bxksl")
+
+[node name="LampPole2" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("37_8yu1d")]
+position = Vector2(2934, -458.217)
+texture = ExtResource("38_mhf2l")
+script = ExtResource("39_bni64")
+day_cycle_data = ExtResource("40_bxksl")
+
+[node name="LampPole3" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("37_8yu1d")]
+position = Vector2(5025.64, -458.217)
+texture = ExtResource("38_mhf2l")
+script = ExtResource("39_bni64")
+day_cycle_data = ExtResource("40_bxksl")
+
+[node name="LampPole4" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("37_8yu1d")]
+position = Vector2(7117.64, -458.217)
+texture = ExtResource("38_mhf2l")
+script = ExtResource("39_bni64")
+day_cycle_data = ExtResource("40_bxksl")
+
+[node name="LampPole5" parent="Background/SideWalk" instance=ExtResource("37_8yu1d")]
+position = Vector2(9201.64, -458.217)
+texture = ExtResource("38_mhf2l")
+script = ExtResource("39_bni64")
+day_cycle_data = ExtResource("40_bxksl")
+
+[node name="LampLight" parent="Background/SideWalk/LampPole5" index="0"]
+position = Vector2(-1, -254)
+enabled = false
+energy = 0.0
+texture = ExtResource("41_3jojy")
+texture_scale = 2.0
+
+[node name="LightSprite" parent="Background/SideWalk/LampPole5" index="1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("42_iqu2y")
+
+[node name="Postbox1" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(961.637, -57.217)
+texture = ExtResource("43_ypqbl")
+
+[node name="Postbox2" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(3978.64, -57.217)
+texture = ExtResource("44_65o4n")
+
+[node name="MetalPost1" type="Node2D" parent="Background/SideWalk"]
+position = Vector2(6558.64, -137.217)
+script = ExtResource("2_vswex")
+is_vertical = false
+main_texture = ExtResource("45_j147w")
+offset = Vector2(0, 0)
+length = 3
+separation = 165
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0])
+
+[node name="MetalPost2" type="Node2D" parent="Background/SideWalk"]
+position = Vector2(7262.64, -137.217)
+script = ExtResource("2_vswex")
+is_vertical = false
+main_texture = ExtResource("45_j147w")
+offset = Vector2(0, 0)
+length = 9
+separation = 165
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="CeilingLimits" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+collision_mask = 17
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/CeilingLimits"]
+polygon = PackedVector2Array(2015, 653, 0, 653, 0, 549, 2015, 549)
+
+[node name="BottomLimit" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/BottomLimit"]
+polygon = PackedVector2Array(2015, 1238, 0, 1238, 0, 1107, 2015, 1107)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[editable path="Background/SideWalk/LampPole5"]

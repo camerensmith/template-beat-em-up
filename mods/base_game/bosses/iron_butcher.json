@@ -12,7 +12,7 @@
 	],
 	"arena": {
 		"min_width": 2400,
-		"min_depth": 340,
+		"min_depth": 500,
 		"features": [
 			"walls",
 			"hooks"

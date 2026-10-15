@@ -1,0 +1,326 @@
+[gd_scene load_steps=34 format=3]
+
+[ext_resource type="Script" path="res://ragebound/stages/rb_stage_segment.gd" id="1_l4lor"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_back_brick_wall_dirty.png" id="2_pomfd"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_tree_leftside.png" id="3_bcmrj"]
+[ext_resource type="Shader" path="res://stages/stage_01/hard_light.gdshader" id="4_qaj0h"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_windows.png" id="5_lncnp"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_black_marble.png" id="6_c4cpq"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_floor_chess.png" id="7_3gn1f"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/decorations/area_2_bamboo1_2.png" id="8_wdl41"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_pilar_leftside.png" id="9_c8gs8"]
+[ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_sprite_repeater.gd" id="10_hwnlp"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_0.png" id="11_jwju2"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_1.png" id="12_83t5c"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_revised_2.png" id="13_rd57b"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_straight.png" id="14_dew26"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/street_revised_curved.png" id="15_5588a"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/area_2_crosswalk.png" id="16_ssd6m"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/pavement/tax_man_streetlines.png" id="17_6mp8v"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/sidewalk/sidewalk_curve_50.png" id="18_vshbn"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/telephone_pole_revised_1_50.png" id="19_x5ww1"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/lamp_pole.tscn" id="20_a4dl1"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_revised_2_01_50.png" id="21_wacd0"]
+[ext_resource type="Script" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/lamp_pole.gd" id="22_27is5"]
+[ext_resource type="Resource" path="res://stages/_base/day_cycle_data.tres" id="23_fpsnx"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_light_map.png" id="24_s5jmp"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/lamp_poles/streetlamp_revised_2_00_50.png" id="25_q7icn"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/post_box/postbox_tagged.png" id="26_ka4vw"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/post_box/postbox_clean.png" id="27_h10gs"]
+[ext_resource type="Texture2D" path="res://stages/stage_01/stage_elements/street_poles/metal_post.png" id="28_6drit"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/gates/tori_gate/tori_gate.tscn" id="29_2ersh"]
+[ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/tax_man_area/brick_gate/dirty_brick_wall_gate.tscn" id="30_wqsvh"]
+[ext_resource type="Script" path="res://stages/stage_01/stage_elements/tax_man_area/brick_gate/dirty_brick_wall_gate.gd" id="31_rhdyi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe6v1"]
+shader = ExtResource("4_qaj0h")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nuxeb"]
+polygon = PackedVector2Array(-30, -1178, 1345, 185, 125, 193, -47, 202)
+
+[node name="ToriiGate" type="Node2D"]
+script = ExtResource("1_l4lor")
+width = 2400
+floor_top = 653.0
+floor_bottom = 1107.0
+walkable_end = -1.0
+camera_top = -320
+camera_bottom = 1195
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="DirtyBrickWall" type="Sprite2D" parent="Background"]
+position = Vector2(37, -37)
+texture = ExtResource("2_pomfd")
+
+[node name="SakuraTree1" type="Sprite2D" parent="Background"]
+position = Vector2(1870, 321)
+scale = Vector2(1.0194, 1.0194)
+texture = ExtResource("3_bcmrj")
+
+[node name="TaxManWindows" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.5)
+material = SubResource("ShaderMaterial_fe6v1")
+position = Vector2(3854.8, 259.75)
+scale = Vector2(1.0194, 1.0194)
+texture = ExtResource("5_lncnp")
+
+[node name="MarbleGround" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(3351, 820)
+texture = ExtResource("6_c4cpq")
+
+[node name="ChessFloor" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(960, 19)
+texture = ExtResource("7_3gn1f")
+
+[node name="BambooVase5" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-2176, -538)
+texture = ExtResource("8_wdl41")
+
+[node name="BambooVase6" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1229, -538)
+texture = ExtResource("8_wdl41")
+
+[node name="MarblePillar1" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-2369, -746)
+texture = ExtResource("9_c8gs8")
+
+[node name="MarblePillar2" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1417, -746)
+texture = ExtResource("9_c8gs8")
+
+[node name="BambooVase4" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(-1556, -538)
+texture = ExtResource("8_wdl41")
+
+[node name="MarblePillar3" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2695, -746)
+texture = ExtResource("9_c8gs8")
+
+[node name="BambooVase7" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2533, -538)
+texture = ExtResource("8_wdl41")
+
+[node name="BambooVase3" type="Sprite2D" parent="Background/MarbleGround"]
+position = Vector2(2779, -457)
+texture = ExtResource("8_wdl41")
+
+[node name="SideWalk3" type="Node2D" parent="Background"]
+position = Vector2(-591.64, 424.217)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("11_jwju2")
+offset = Vector2(0, 0)
+length = 6
+separation = -99
+cap_begin = null
+cap_begin_offset = Vector2(-451, 9)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([ExtResource("12_83t5c"), ExtResource("13_rd57b")])
+variations_weights = Array[float]([0.347292, 0.946498, 1.70621])
+texture_sequence = Array[int]([1, 2, 2, 0, 2, 1])
+
+[node name="Pavement" type="Node2D" parent="Background"]
+position = Vector2(-9332, 650)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("14_dew26")
+offset = Vector2(0, 0)
+length = 6
+separation = -480
+cap_begin = ExtResource("15_5588a")
+cap_begin_offset = Vector2(-583, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0])
+
+[node name="CrossWalk1" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(2425, 0)
+texture = ExtResource("16_ssd6m")
+centered = false
+
+[node name="CrossWalk2" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(6268, 0)
+texture = ExtResource("16_ssd6m")
+centered = false
+
+[node name="WhiteLines" type="Sprite2D" parent="Background/Pavement"]
+position = Vector2(9216, -12)
+texture = ExtResource("17_6mp8v")
+centered = false
+
+[node name="SideWalk2" type="Node2D" parent="Background"]
+position = Vector2(-8057.64, 482.217)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("11_jwju2")
+offset = Vector2(0, 0)
+length = 42
+separation = -99
+cap_begin = null
+cap_begin_offset = Vector2(-451, 9)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([ExtResource("12_83t5c"), ExtResource("13_rd57b")])
+variations_weights = Array[float]([0.831792, 1.60504, 0.563167])
+texture_sequence = Array[int]([1, 1, 0, 2, 2, 1, 1, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 2])
+
+[node name="BambooVase1" type="Sprite2D" parent="Background/SideWalk2"]
+position = Vector2(6882.64, -215.217)
+texture = ExtResource("8_wdl41")
+
+[node name="BambooVase2" type="Sprite2D" parent="Background/SideWalk2"]
+position = Vector2(7620.64, -215.217)
+texture = ExtResource("8_wdl41")
+
+[node name="SideWalk" type="Node2D" parent="Background"]
+position = Vector2(-9460.64, 541.217)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("11_jwju2")
+offset = Vector2(0, 0)
+length = 49
+separation = -99
+cap_begin = ExtResource("18_vshbn")
+cap_begin_offset = Vector2(-451, 9)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([ExtResource("12_83t5c"), ExtResource("13_rd57b")])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0, 2, 2, 0, 0, 1, 0, 2, 2, 1, 0, 0, 0, 1, 1, 0, 1, 0])
+
+[node name="TelefonePole" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(911.637, -522.217)
+texture = ExtResource("19_x5ww1")
+
+[node name="TelefonePole2" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(5091.64, -522.217)
+texture = ExtResource("19_x5ww1")
+
+[node name="LampPole1" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("20_a4dl1")]
+position = Vector2(840.637, -458.217)
+texture = ExtResource("21_wacd0")
+script = ExtResource("22_27is5")
+day_cycle_data = ExtResource("23_fpsnx")
+
+[node name="LampPole2" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("20_a4dl1")]
+position = Vector2(2934, -458.217)
+texture = ExtResource("21_wacd0")
+script = ExtResource("22_27is5")
+day_cycle_data = ExtResource("23_fpsnx")
+
+[node name="LampPole3" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("20_a4dl1")]
+position = Vector2(5025.64, -458.217)
+texture = ExtResource("21_wacd0")
+script = ExtResource("22_27is5")
+day_cycle_data = ExtResource("23_fpsnx")
+
+[node name="LampPole4" type="Sprite2D" parent="Background/SideWalk" instance=ExtResource("20_a4dl1")]
+position = Vector2(7117.64, -458.217)
+texture = ExtResource("21_wacd0")
+script = ExtResource("22_27is5")
+day_cycle_data = ExtResource("23_fpsnx")
+
+[node name="LampPole5" parent="Background/SideWalk" instance=ExtResource("20_a4dl1")]
+position = Vector2(9201.64, -458.217)
+texture = ExtResource("21_wacd0")
+script = ExtResource("22_27is5")
+day_cycle_data = ExtResource("23_fpsnx")
+
+[node name="LampLight" parent="Background/SideWalk/LampPole5" index="0"]
+position = Vector2(-1, -254)
+enabled = false
+energy = 0.0
+texture = ExtResource("24_s5jmp")
+texture_scale = 2.0
+
+[node name="LightSprite" parent="Background/SideWalk/LampPole5" index="1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("25_q7icn")
+
+[node name="Postbox1" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(961.637, -57.217)
+texture = ExtResource("26_ka4vw")
+
+[node name="Postbox2" type="Sprite2D" parent="Background/SideWalk"]
+position = Vector2(3978.64, -57.217)
+texture = ExtResource("27_h10gs")
+
+[node name="MetalPost1" type="Node2D" parent="Background/SideWalk"]
+position = Vector2(6558.64, -137.217)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("28_6drit")
+offset = Vector2(0, 0)
+length = 3
+separation = 165
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0])
+
+[node name="MetalPost2" type="Node2D" parent="Background/SideWalk"]
+position = Vector2(7262.64, -137.217)
+script = ExtResource("10_hwnlp")
+is_vertical = false
+main_texture = ExtResource("28_6drit")
+offset = Vector2(0, 0)
+length = 9
+separation = 165
+cap_begin = null
+cap_begin_offset = Vector2(0, 0)
+cap_end = null
+cap_end_offset = Vector2(0, 0)
+variation_textures = Array[Texture2D]([])
+variations_weights = Array[float]([1.49616, 0.968136, 0.535703])
+texture_sequence = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="ToriGate" type="Node2D" parent="Objects" instance=ExtResource("29_2ersh")]
+self_modulate = Color(0.341176, 0.32549, 0.14902, 0.541176)
+y_sort_enabled = true
+position = Vector2(333, 790.5)
+scale = Vector2(0.75, 0.75)
+
+[node name="DirtyBrickWallGate" type="Node2D" parent="Objects" instance=ExtResource("30_wqsvh")]
+y_sort_enabled = true
+position = Vector2(1139, 1051)
+script = ExtResource("31_rhdyi")
+metadata/_edit_vertical_guides_ = [11214.0]
+metadata/_edit_horizontal_guides_ = [1243.0]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/DirtyBrickWallGate"]
+occluder = SubResource("OccluderPolygon2D_nuxeb")
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="CeilingLimits" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+collision_mask = 17
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/CeilingLimits"]
+polygon = PackedVector2Array(781, 653, 0, 653, 0, 549, 781, 549)
+
+[node name="Shape1" type="CollisionPolygon2D" parent="Collisions/CeilingLimits"]
+polygon = PackedVector2Array(2400, 480.952, 2207, 481, 2184, 551, 2071, 575, 949, 575, 884, 505, 1959, 385, 2400, 383.721)
+
+[node name="BottomLimit" type="StaticBody2D" parent="Collisions"]
+collision_layer = 4
+
+[node name="Shape0" type="CollisionPolygon2D" parent="Collisions/BottomLimit"]
+polygon = PackedVector2Array(2400, 1238, 0, 1238, 0, 1107, 2400, 1107)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[editable path="Background/SideWalk/LampPole5"]

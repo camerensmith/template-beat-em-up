@@ -4,7 +4,7 @@
 		"name": "Loading Dock",
 		"theme": "factory",
 		"width": 1800,
-		"depth": 320,
+		"depth": 480,
 		"roles": [
 			"entry",
 			"combat",
@@ -26,7 +26,7 @@
 		"name": "Assembly Line",
 		"theme": "factory",
 		"width": 2000,
-		"depth": 300,
+		"depth": 454,
 		"roles": [
 			"combat",
 			"ambush"
@@ -48,7 +48,7 @@
 		"name": "Furnace Room",
 		"theme": "factory",
 		"width": 2000,
-		"depth": 320,
+		"depth": 500,
 		"roles": [
 			"elite",
 			"combat",
@@ -72,7 +72,7 @@
 		"name": "Foreman's Office",
 		"theme": "factory",
 		"width": 1000,
-		"depth": 240,
+		"depth": 400,
 		"roles": [
 			"event",
 			"shop"
@@ -91,7 +91,7 @@
 		"name": "Slaughterhouse Floor",
 		"theme": "factory",
 		"width": 2600,
-		"depth": 380,
+		"depth": 560,
 		"roles": [
 			"boss"
 		],

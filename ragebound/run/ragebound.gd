@@ -28,6 +28,8 @@ signal loot_dropped(drops: Array)
 const SAVE_PATH = "user://ragebound_save.json"
 const DEFAULT_CHARACTER = "chad"
 const META_BASE_VALUES = &"rb_base_values"
+## Set by stages that place planned spawns themselves: [code]{spawn, entry}[/code].
+const META_SPAWN = &"rb_spawn"
 
 const COLOR_INFO = Color("#e8e8e8")
 const COLOR_XP = Color("#9fe870")
@@ -149,6 +151,35 @@ func get_monster_info(attributes: QuiverAttributes) -> Dictionary:
 	return _monsters.get(attributes, {})
 
 
+## Rolls [param table_id] at the rift's monster level and gives the drops to the hero.
+func award_loot(table_id: String, announcement := "") -> void:
+	if hero == null:
+		return
+	if not announcement.is_empty():
+		post_message(announcement, COLOR_GOLD)
+	_grant_drops(loot.roll_table(table_id, plan.get("monster_level", 1), _loot_rng, {
+		"magic_find_pct": _player_stats.get_value("magic_find_pct"),
+		"gold_find_pct": _player_stats.get_value("gold_find_pct"),
+		"loot_bonus_pct": _get_mutator_bonus("loot_bonus_pct"),
+	}))
+	save_game()
+
+
+## Heals the player by [param ratio] of their max life.
+func heal_player(ratio: float) -> void:
+	if _player_attributes != null and _player_attributes.is_alive():
+		_player_attributes.health_current += ceili(_player_attributes.health_max * ratio)
+
+
+func spend_gold(amount: int) -> bool:
+	if hero == null or hero.gold < amount:
+		return false
+	hero.gold -= amount
+	hero_changed.emit()
+	save_game()
+	return true
+
+
 func post_message(text: String, color := COLOR_INFO) -> void:
 	message_posted.emit(text, color)
 
@@ -231,7 +262,9 @@ func _on_node_added(node: Node) -> void:
 func _on_character_ready(character: QuiverCharacter) -> void:
 	if character.attributes == null:
 		return
-	if not is_run_active:
+	# Only a player entering a stage starts a run. Enemies arriving after the boss died (later
+	# waves of the same room) still belong to the rift that just ended.
+	if not is_run_active and not character is QuiverEnemyCharacter:
 		start_run()
 	if character is QuiverEnemyCharacter:
 		_setup_monster(character)
@@ -275,7 +308,10 @@ func _store_base_values(attributes: QuiverAttributes) -> void:
 func _setup_monster(character: QuiverEnemyCharacter) -> void:
 	var attributes := character.attributes
 	_store_base_values(attributes)
-	var assignment := _take_spawn_for_scene(character.scene_file_path)
+	var assignment: Dictionary = character.get_meta(META_SPAWN, {})
+	var is_placed := not assignment.is_empty()
+	if not is_placed:
+		assignment = _take_spawn_for_scene(character.scene_file_path)
 	if assignment.is_empty():
 		return
 
@@ -312,7 +348,8 @@ func _setup_monster(character: QuiverEnemyCharacter) -> void:
 	attributes.health_changed.connect(_on_monster_health_changed.bind(attributes))
 	character.tree_exited.connect(func(): _monsters.erase(attributes), CONNECT_ONE_SHOT)
 
-	if assignment.spawn.kind != "enemy":
+	# Stages that place spawns announce their own bosses when the fight starts.
+	if assignment.spawn.kind != "enemy" and not is_placed:
 		post_message("%s: \"%s\"" % [entry.name, entry.get("intro_text", "...")], COLOR_DANGER)
 
 

@@ -52,3 +52,4 @@
 # End of https://www.toptal.com/developers/gitignore/api/godot,obsidian,visualstudiocode
 
 export_project.sh
+.lfs-assets-id
