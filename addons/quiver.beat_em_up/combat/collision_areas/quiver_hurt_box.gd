@@ -101,13 +101,17 @@ func _can_be_grabbed_by(grabber: QuiverAttributes) -> bool:
 func _handle_hit_box(hit_box: QuiverHitBox) -> void:
 	if _can_be_attacked_by(hit_box.character_attributes):
 #		print("hit_box: %s"%[hit_box.get_path()])
-		CombatSystem.apply_damage(hit_box.attack_data, character_attributes)
+		CombatSystem.apply_damage(
+				hit_box.attack_data, character_attributes, hit_box.character_attributes
+		)
 		var knockback: QuiverKnockbackData = QuiverKnockbackData.new(
 				hit_box.attack_data.knockback,
 				hit_box.attack_data.hurt_type,
 				_get_treated_launch_vector(hit_box)
 		)
-		CombatSystem.apply_knockback(knockback, character_attributes)
+		CombatSystem.apply_knockback(
+				knockback, character_attributes, hit_box.character_attributes
+		)
 		
 		if hit_box.character_type == CombatSystem.CharacterTypes.PLAYERS:
 			Events.enemy_data_sent.emit(character_attributes, hit_box.character_attributes)
