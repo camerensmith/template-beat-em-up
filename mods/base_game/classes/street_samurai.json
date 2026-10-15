@@ -1,0 +1,29 @@
+{
+	"id": "street_samurai",
+	"name": "Street Samurai",
+	"description": "Bladed combat built around single decisive cuts.",
+	"identity": "Bladed combat built around single decisive cuts",
+	"specializations": [
+		{
+			"id": "iaijutsu",
+			"name": "Iaijutsu",
+			"description": "Charged draw-cuts."
+		},
+		{
+			"id": "blood",
+			"name": "Blood",
+			"description": "Life drain from every cut."
+		}
+	],
+	"base_stats": {
+		"damage_pct": 10,
+		"crit_damage_pct": 20
+	},
+	"per_level": {
+		"life": 5,
+		"damage_pct": 3
+	},
+	"starting_items": [
+		"brass_knuckles"
+	]
+}

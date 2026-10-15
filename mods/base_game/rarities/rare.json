@@ -1,0 +1,16 @@
+{
+	"id": "rare",
+	"name": "Rare",
+	"order": 2,
+	"color": "#ffd84a",
+	"weight": 12,
+	"min_ilvl": 3,
+	"generates": "affixes",
+	"magic_find_scaling": true,
+	"affixes": {
+		"min": 3,
+		"max": 5
+	},
+	"max_prefixes": 3,
+	"max_suffixes": 3
+}

@@ -1,0 +1,29 @@
+{
+	"id": "cyborg",
+	"name": "Cyborg",
+	"description": "Technological enhancements and overload attacks.",
+	"identity": "Technological enhancements and overload attacks",
+	"specializations": [
+		{
+			"id": "cybernetics",
+			"name": "Cybernetics",
+			"description": "Armor plating and regeneration."
+		},
+		{
+			"id": "overload",
+			"name": "Overload",
+			"description": "Burning circuitry on every hit."
+		}
+	],
+	"base_stats": {
+		"armor": 15,
+		"fire_damage": 2
+	},
+	"per_level": {
+		"life": 7,
+		"armor": 2
+	},
+	"starting_items": [
+		"fingerless_gloves"
+	]
+}

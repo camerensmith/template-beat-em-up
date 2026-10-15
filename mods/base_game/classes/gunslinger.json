@@ -1,0 +1,28 @@
+{
+	"id": "gunslinger",
+	"name": "Gunslinger",
+	"description": "Ammunition and firearms at close range.",
+	"identity": "Ammunition and firearms at close range",
+	"specializations": [
+		{
+			"id": "gun_fu",
+			"name": "Gun-Fu",
+			"description": "Point-blank shots inside combos."
+		},
+		{
+			"id": "demolition",
+			"name": "Demolition",
+			"description": "Explosives and area damage."
+		}
+	],
+	"base_stats": {
+		"damage_flat": 2
+	},
+	"per_level": {
+		"life": 5,
+		"damage_flat": 0.5
+	},
+	"starting_items": [
+		"brass_knuckles"
+	]
+}

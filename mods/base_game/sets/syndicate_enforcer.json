@@ -1,0 +1,20 @@
+{
+	"id": "syndicate_enforcer",
+	"name": "Syndicate Enforcer",
+	"bonuses": [
+		{
+			"pieces": 2,
+			"stats": {
+				"damage_pct": 15,
+				"armor": 15
+			}
+		},
+		{
+			"pieces": 3,
+			"stats": {
+				"knockback_tier": 1,
+				"life_on_hit": 3
+			}
+		}
+	]
+}

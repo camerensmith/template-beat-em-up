@@ -1,0 +1,10 @@
+{
+	"id": "thorned",
+	"name": "Thorned",
+	"stats": {
+		"thorns": 4
+	},
+	"tint": "#5adc78",
+	"min_depth": 1,
+	"weight": 1
+}

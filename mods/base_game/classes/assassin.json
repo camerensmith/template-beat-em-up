@@ -1,0 +1,30 @@
+{
+	"id": "assassin",
+	"name": "Assassin",
+	"description": "Mobility and critical damage.",
+	"identity": "Mobility and critical damage",
+	"specializations": [
+		{
+			"id": "bleed",
+			"name": "Bleed",
+			"description": "Deep cuts that keep hurting."
+		},
+		{
+			"id": "poison",
+			"name": "Poison",
+			"description": "Toxins that spread through the crowd."
+		}
+	],
+	"base_stats": {
+		"crit_chance": 10,
+		"crit_damage_pct": 25,
+		"life": -20
+	},
+	"per_level": {
+		"life": 4,
+		"crit_damage_pct": 2
+	},
+	"starting_items": [
+		"hand_wraps"
+	]
+}

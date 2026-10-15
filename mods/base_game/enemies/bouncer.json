@@ -1,0 +1,21 @@
+{
+	"id": "bouncer",
+	"name": "Bouncer",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"archetype": "brute",
+	"threat": 2,
+	"xp": 22,
+	"loot_table": "trash",
+	"themes": [
+		"club"
+	],
+	"can_be_elite": true,
+	"min_depth": 0,
+	"weight": 2,
+	"stats": {
+		"life_pct": 100,
+		"armor": 15
+	},
+	"description": "Placeholder body: uses the Sargent scene until its own sprite pack exists.",
+	"tint": "#c9a0ff"
+}

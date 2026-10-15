@@ -1,0 +1,45 @@
+[
+	{
+		"id": "blood_moon",
+		"name": "Blood Moon",
+		"description": "Enemies hit harder. So does the loot.",
+		"enemy_stats": {
+			"damage_pct": 25
+		},
+		"loot_bonus_pct": 25
+	},
+	{
+		"id": "iron_skin",
+		"name": "Iron Skin",
+		"description": "Enemies are armored.",
+		"enemy_stats": {
+			"armor": 30
+		},
+		"xp_bonus_pct": 20
+	},
+	{
+		"id": "glass_cannon",
+		"name": "Glass Cannon",
+		"description": "You deal more damage but have less life.",
+		"player_stats": {
+			"damage_pct": 40,
+			"life_pct": -30
+		}
+	},
+	{
+		"id": "elite_surge",
+		"name": "Elite Surge",
+		"description": "More elites roam the rift.",
+		"elite_chance_bonus": 0.25,
+		"loot_bonus_pct": 30
+	},
+	{
+		"id": "vampire_streets",
+		"name": "Vampire Streets",
+		"description": "Enemies heal when they hit you.",
+		"enemy_stats": {
+			"life_on_hit": 3
+		},
+		"xp_bonus_pct": 15
+	}
+]

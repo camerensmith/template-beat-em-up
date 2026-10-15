@@ -1,0 +1,289 @@
+[
+	{
+		"id": "brutal",
+		"kind": "prefix",
+		"name": "Brutal",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"damage_pct": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 6,
+				"stats": {
+					"damage_pct": [
+						11,
+						20
+					]
+				}
+			},
+			{
+				"min_ilvl": 14,
+				"stats": {
+					"damage_pct": [
+						21,
+						35
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "heavy",
+		"kind": "prefix",
+		"name": "Heavy",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"damage_flat": [
+						1,
+						2
+					]
+				}
+			},
+			{
+				"min_ilvl": 8,
+				"stats": {
+					"damage_flat": [
+						3,
+						5
+					]
+				}
+			},
+			{
+				"min_ilvl": 16,
+				"stats": {
+					"damage_flat": [
+						6,
+						9
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves"
+		]
+	},
+	{
+		"id": "sturdy",
+		"kind": "prefix",
+		"name": "Sturdy",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"armor": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 7,
+				"stats": {
+					"armor": [
+						11,
+						25
+					]
+				}
+			},
+			{
+				"min_ilvl": 15,
+				"stats": {
+					"armor": [
+						26,
+						45
+					]
+				}
+			}
+		],
+		"slots": [
+			"head",
+			"chest",
+			"belt",
+			"boots",
+			"gloves"
+		]
+	},
+	{
+		"id": "vital",
+		"kind": "prefix",
+		"name": "Vital",
+		"weight": 1.5,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"life": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 6,
+				"stats": {
+					"life": [
+						11,
+						20
+					]
+				}
+			},
+			{
+				"min_ilvl": 14,
+				"stats": {
+					"life": [
+						21,
+						35
+					]
+				}
+			}
+		]
+	},
+	{
+		"id": "burning",
+		"kind": "prefix",
+		"name": "Burning",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 3,
+				"stats": {
+					"fire_damage": [
+						1,
+						3
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"fire_damage": [
+						4,
+						7
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring",
+			"amulet"
+		],
+		"group": "elemental"
+	},
+	{
+		"id": "shocking",
+		"kind": "prefix",
+		"name": "Shocking",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 3,
+				"stats": {
+					"shock_damage": [
+						1,
+						3
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"shock_damage": [
+						4,
+						7
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring",
+			"amulet"
+		],
+		"group": "elemental"
+	},
+	{
+		"id": "venomous",
+		"kind": "prefix",
+		"name": "Venomous",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 3,
+				"stats": {
+					"poison_damage": [
+						1,
+						3
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"poison_damage": [
+						4,
+						7
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring",
+			"amulet"
+		],
+		"group": "elemental"
+	},
+	{
+		"id": "savage",
+		"kind": "prefix",
+		"name": "Savage",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 4,
+				"stats": {
+					"crit_damage_pct": [
+						10,
+						20
+					]
+				}
+			},
+			{
+				"min_ilvl": 12,
+				"stats": {
+					"crit_damage_pct": [
+						21,
+						35
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"ring",
+			"amulet"
+		]
+	}
+]

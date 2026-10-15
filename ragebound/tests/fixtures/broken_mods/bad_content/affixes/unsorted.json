@@ -1,0 +1,25 @@
+{
+	"id": "unsorted",
+	"kind": "prefix",
+	"name": "Unsorted",
+	"tiers": [
+		{
+			"min_ilvl": 10,
+			"stats": {
+				"life": [
+					5,
+					1
+				]
+			}
+		},
+		{
+			"min_ilvl": 1,
+			"stats": {
+				"life": [
+					1,
+					2
+				]
+			}
+		}
+	]
+}

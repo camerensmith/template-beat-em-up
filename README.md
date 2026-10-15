@@ -1,3 +1,27 @@
+# RAGEBOUND
+A side-scrolling combat ARPG that happens to play like *Streets of Rage*: beat-'em-up combat,
+Diablo-style classes and loot, Mortal Kombat-style depth, and procedurally assembled rifts, all
+fully moddable. Built on the Downtown Beatdown template (original README below).
+
+**Read the design, architecture and modding guide: [docs/RAGEBOUND.md](docs/RAGEBOUND.md)**
+
+| | |
+| --- | --- |
+| `mods/base_game/` | All game content as data: 10 classes, skills, enemies, bosses, elites, items, affixes, uniques, sets, loot tables, stage segments, encounters, rifts, mutators |
+| `ragebound/` | Mod registry and schemas, loot, stats and combat math, rift director, hero progression, gameplay hooks, HUD, sprite pack importer, tools and tests |
+| `examples/mods/` | A community pack showing new content, overrides and patches |
+
+```sh
+# tests and content validation (open the project in the editor once first)
+godot --headless -s res://ragebound/tests/run_tests.gd
+godot --headless -s res://ragebound/tools/ragebound_cli.gd -- validate
+godot --headless -s res://ragebound/tools/ragebound_cli.gd -- rift --seed 7 --level 3
+```
+
+In game, press **Tab** / **I** / gamepad **Back** to open the character sheet.
+
+---
+
 # Downtown Beatdown: Beat-em-up game template
 An open source 2D beat-em-up game template for Godot 4, to make games like *Streets of Rage*.
 Created by [Quiver](https://quiver.dev).

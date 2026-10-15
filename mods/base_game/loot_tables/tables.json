@@ -1,0 +1,99 @@
+[
+	{
+		"id": "trash",
+		"rolls": {
+			"min": 1,
+			"max": 1
+		},
+		"no_drop_weight": 65,
+		"rarity_bonus": 1,
+		"entries": [
+			{
+				"kind": "item",
+				"weight": 15
+			},
+			{
+				"kind": "gold",
+				"weight": 20,
+				"gold": {
+					"min": 2,
+					"max": 8
+				}
+			}
+		]
+	},
+	{
+		"id": "elite",
+		"rolls": {
+			"min": 1,
+			"max": 2
+		},
+		"no_drop_weight": 10,
+		"rarity_bonus": 2.5,
+		"entries": [
+			{
+				"kind": "item",
+				"weight": 70
+			},
+			{
+				"kind": "gold",
+				"weight": 30,
+				"gold": {
+					"min": 10,
+					"max": 25
+				}
+			}
+		]
+	},
+	{
+		"id": "miniboss",
+		"rolls": {
+			"min": 2,
+			"max": 3
+		},
+		"no_drop_weight": 0,
+		"rarity_bonus": 4,
+		"entries": [
+			{
+				"kind": "item",
+				"weight": 75
+			},
+			{
+				"kind": "gold",
+				"weight": 25,
+				"gold": {
+					"min": 25,
+					"max": 60
+				}
+			}
+		]
+	},
+	{
+		"id": "boss",
+		"rolls": {
+			"min": 3,
+			"max": 5
+		},
+		"no_drop_weight": 0,
+		"rarity_bonus": 6,
+		"entries": [
+			{
+				"kind": "item",
+				"weight": 70
+			},
+			{
+				"kind": "item",
+				"weight": 10,
+				"slot": "weapon"
+			},
+			{
+				"kind": "gold",
+				"weight": 20,
+				"gold": {
+					"min": 60,
+					"max": 150
+				}
+			}
+		]
+	}
+]

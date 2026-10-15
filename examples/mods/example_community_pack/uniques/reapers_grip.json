@@ -1,0 +1,21 @@
+{
+	"id": "reapers_grip",
+	"name": "Reaper's Grip",
+	"base": "mma_gloves",
+	"min_ilvl": 8,
+	"stats": {
+		"execute_threshold_pct": [
+			10,
+			15
+		],
+		"life_on_kill": [
+			8,
+			12
+		],
+		"shock_damage": [
+			3,
+			6
+		]
+	},
+	"flavor": "It only takes the ones who are already leaving."
+}

@@ -1,0 +1,23 @@
+{
+	"id": "bruiser",
+	"name": "Bruiser",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"archetype": "brute",
+	"threat": 2,
+	"xp": 20,
+	"loot_table": "trash",
+	"themes": [
+		"street",
+		"alley",
+		"factory"
+	],
+	"can_be_elite": true,
+	"min_depth": 1,
+	"weight": 2,
+	"stats": {
+		"life_pct": 80,
+		"damage_pct": 30
+	},
+	"description": "Placeholder body: uses the Sargent scene until its own sprite pack exists.",
+	"tint": "#ffb08a"
+}

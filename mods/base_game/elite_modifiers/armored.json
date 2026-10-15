@@ -1,0 +1,10 @@
+{
+	"id": "armored",
+	"name": "Armored",
+	"stats": {
+		"armor": 40
+	},
+	"tint": "#9fb4c8",
+	"min_depth": 0,
+	"weight": 1
+}

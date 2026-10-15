@@ -1,0 +1,84 @@
+[
+	{
+		"id": "brawler_iron_fists",
+		"name": "Iron Fists",
+		"class": "brawler",
+		"tier": 1,
+		"max_rank": 5,
+		"stats_per_rank": {
+			"damage_flat": 1
+		},
+		"description": "Every punch hits harder."
+	},
+	{
+		"id": "brawler_tough",
+		"name": "Street Tough",
+		"class": "brawler",
+		"tier": 1,
+		"max_rank": 5,
+		"stats_per_rank": {
+			"life": 8
+		},
+		"description": "You've taken worse."
+	},
+	{
+		"id": "brawler_combo_flow",
+		"name": "Combo Flow",
+		"class": "brawler",
+		"tier": 2,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"damage_pct": 6
+		},
+		"description": "Strings of hits build momentum.",
+		"specialization": "combo",
+		"requires": [
+			"brawler_iron_fists"
+		]
+	},
+	{
+		"id": "brawler_finisher",
+		"name": "Finisher",
+		"class": "brawler",
+		"tier": 3,
+		"max_rank": 1,
+		"stats_per_rank": {
+			"execute_threshold_pct": 8
+		},
+		"description": "Wounded thugs go down for good.",
+		"specialization": "combo",
+		"requires": [
+			"brawler_combo_flow"
+		]
+	},
+	{
+		"id": "brawler_guard",
+		"name": "Tight Guard",
+		"class": "brawler",
+		"tier": 2,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"armor": 8
+		},
+		"description": "Elbows in, chin down.",
+		"specialization": "counter",
+		"requires": [
+			"brawler_tough"
+		]
+	},
+	{
+		"id": "brawler_spite",
+		"name": "Spite",
+		"class": "brawler",
+		"tier": 3,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"thorns": 3
+		},
+		"description": "Hitting you hurts them.",
+		"specialization": "counter",
+		"requires": [
+			"brawler_guard"
+		]
+	}
+]

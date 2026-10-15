@@ -1,0 +1,46 @@
+{
+	"id": "iron_butcher",
+	"name": "The Iron Butcher",
+	"tier": "boss",
+	"scene": "res://characters/enemies/tax_man/tax_man.tscn",
+	"placeholder": true,
+	"tint": "#ff6b6b",
+	"xp": 400,
+	"loot_table": "boss",
+	"themes": [
+		"factory"
+	],
+	"arena": {
+		"min_width": 2400,
+		"min_depth": 340,
+		"features": [
+			"walls",
+			"hooks"
+		]
+	},
+	"moves": [
+		"cleaver_combo",
+		"chain_grab",
+		"ground_slam"
+	],
+	"phases": [
+		{
+			"below_health": 0.5,
+			"unlock": [
+				"berserk_charge"
+			],
+			"stats": {
+				"damage_pct": 35,
+				"move_speed_pct": 20
+			}
+		}
+	],
+	"stats": {
+		"life_pct": 50,
+		"damage_pct": 25,
+		"armor": 20
+	},
+	"min_depth": 3,
+	"intro_text": "Fresh meat.",
+	"description": "Design-complete boss using the Tax Man body until the Butcher sprite pack lands."
+}

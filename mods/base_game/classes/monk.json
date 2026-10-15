@@ -1,0 +1,29 @@
+{
+	"id": "monk",
+	"name": "Monk",
+	"description": "Ki, deflections and pressure.",
+	"identity": "Ki, deflections and pressure",
+	"specializations": [
+		{
+			"id": "discipline",
+			"name": "Discipline",
+			"description": "Deflect and reduce damage."
+		},
+		{
+			"id": "tempest",
+			"name": "Tempest",
+			"description": "Lightning-fast flurries."
+		}
+	],
+	"base_stats": {
+		"damage_reduction_pct": 5,
+		"life_on_hit": 1
+	},
+	"per_level": {
+		"life": 6,
+		"life_on_hit": 0.2
+	},
+	"starting_items": [
+		"hand_wraps"
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"id": "brawler",
+	"name": "Brawler",
+	"description": "Traditional street fighter: reliable combos, solid all-round stats.",
+	"identity": "Traditional street fighter",
+	"specializations": [
+		{
+			"id": "combo",
+			"name": "Combo",
+			"description": "Longer strings, more damage the further a combo goes."
+		},
+		{
+			"id": "counter",
+			"name": "Counter",
+			"description": "Punishes enemy attacks with armor and thorns."
+		}
+	],
+	"base_stats": {},
+	"per_level": {
+		"life": 6,
+		"damage_pct": 2
+	},
+	"starting_items": [
+		"brass_knuckles",
+		"leather_jacket"
+	]
+}

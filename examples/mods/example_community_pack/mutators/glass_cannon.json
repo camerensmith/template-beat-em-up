@@ -1,0 +1,10 @@
+{
+	"id": "base_game:glass_cannon",
+	"name": "Glass Cannon+",
+	"description": "Community rebalance.",
+	"player_stats": {
+		"damage_pct": 60,
+		"life_pct": -40
+	},
+	"loot_bonus_pct": 20
+}

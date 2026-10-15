@@ -1,0 +1,9 @@
+{
+	"id": "bad_content",
+	"name": "Bad",
+	"version": "0.0.1",
+	"ragebound_api": 1,
+	"dependencies": [
+		"base_game"
+	]
+}

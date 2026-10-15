@@ -1,0 +1,13 @@
+{
+	"id": "example_community_pack",
+	"name": "Example Community Pack",
+	"version": "1.0.0",
+	"ragebound_api": 1,
+	"dependencies": [
+		"base_game"
+	],
+	"authors": [
+		"You"
+	],
+	"description": "Shows every way a mod can extend Ragebound. Copy this folder into user://mods (or res://mods) to load it."
+}

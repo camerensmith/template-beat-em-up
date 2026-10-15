@@ -1,0 +1,10 @@
+{
+	"id": "legendary",
+	"name": "Legendary",
+	"order": 3,
+	"color": "#ff8a1f",
+	"weight": 2,
+	"min_ilvl": 5,
+	"generates": "unique",
+	"magic_find_scaling": true
+}

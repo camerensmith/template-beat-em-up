@@ -1,0 +1,29 @@
+{
+	"id": "occultist",
+	"name": "Occultist",
+	"description": "Supernatural strikes and hexes.",
+	"identity": "Supernatural strikes and hexes",
+	"specializations": [
+		{
+			"id": "hex",
+			"name": "Hex",
+			"description": "Curses that weaken enemies."
+		},
+		{
+			"id": "soul",
+			"name": "Soul",
+			"description": "Harvest souls from kills."
+		}
+	],
+	"base_stats": {
+		"shock_damage": 3,
+		"resist_all": 10
+	},
+	"per_level": {
+		"life": 4,
+		"shock_damage": 0.5
+	},
+	"starting_items": [
+		"dog_tags"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"id": "common",
+	"name": "Common",
+	"order": 0,
+	"color": "#c8c8c8",
+	"weight": 100,
+	"min_ilvl": 1,
+	"generates": "affixes",
+	"magic_find_scaling": false,
+	"affixes": {
+		"min": 0,
+		"max": 0
+	},
+	"max_prefixes": 0,
+	"max_suffixes": 0
+}

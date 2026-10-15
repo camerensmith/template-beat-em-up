@@ -1,0 +1,14 @@
+{
+	"id": "juggernaut",
+	"name": "Juggernaut",
+	"stats": {
+		"life_pct": 150,
+		"move_speed_pct": -15
+	},
+	"tint": "#707070",
+	"min_depth": 2,
+	"weight": 1,
+	"incompatible": [
+		"frenzied"
+	]
+}

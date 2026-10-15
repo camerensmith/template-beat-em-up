@@ -1,0 +1,30 @@
+{
+	"id": "enforcer",
+	"name": "Enforcer",
+	"description": "Heavy weapons and heavy armor.",
+	"identity": "Heavy weapons and heavy armor",
+	"specializations": [
+		{
+			"id": "juggernaut",
+			"name": "Juggernaut",
+			"description": "Unstoppable armor."
+		},
+		{
+			"id": "executioner",
+			"name": "Executioner",
+			"description": "Finishes off the wounded."
+		}
+	],
+	"base_stats": {
+		"life": 40,
+		"armor": 20,
+		"move_speed_pct": -10
+	},
+	"per_level": {
+		"life": 9,
+		"armor": 3
+	},
+	"starting_items": [
+		"lead_pipe"
+	]
+}

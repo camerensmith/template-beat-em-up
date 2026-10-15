@@ -1,0 +1,88 @@
+[
+	{
+		"id": "pile_drivers",
+		"name": "The Pile Drivers",
+		"base": "fingerless_gloves",
+		"min_ilvl": 5,
+		"stats": {
+			"damage_pct": [
+				20,
+				30
+			],
+			"knockback_tier": 1,
+			"life": [
+				10,
+				20
+			]
+		},
+		"flavor": "Every punch lands like a body slam."
+	},
+	{
+		"id": "widowmaker",
+		"name": "Widowmaker",
+		"base": "baseball_bat",
+		"min_ilvl": 8,
+		"stats": {
+			"damage_flat": [
+				3,
+				5
+			],
+			"execute_threshold_pct": [
+				8,
+				12
+			]
+		},
+		"flavor": "Nobody gets back up."
+	},
+	{
+		"id": "last_man_standing",
+		"name": "Last Man Standing",
+		"base": "bandana",
+		"min_ilvl": 5,
+		"stats": {
+			"life_on_kill": [
+				6,
+				10
+			],
+			"life_pct": [
+				10,
+				15
+			]
+		},
+		"flavor": "Worn by the only one who walked out."
+	},
+	{
+		"id": "neon_soles",
+		"name": "Neon Soles",
+		"base": "sneakers",
+		"min_ilvl": 6,
+		"stats": {
+			"move_speed_pct": [
+				12,
+				18
+			],
+			"crit_chance": [
+				3,
+				5
+			]
+		},
+		"flavor": "Light up the night. Then leave it behind."
+	},
+	{
+		"id": "dragon_coil",
+		"name": "Dragon Coil",
+		"base": "gold_chain",
+		"min_ilvl": 10,
+		"stats": {
+			"fire_damage": [
+				5,
+				9
+			],
+			"crit_damage_pct": [
+				20,
+				40
+			]
+		},
+		"flavor": "Warm to the touch. Hot to the jaw."
+	}
+]

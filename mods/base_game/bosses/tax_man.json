@@ -1,0 +1,37 @@
+{
+	"id": "tax_man",
+	"name": "The Tax Man",
+	"tier": "boss",
+	"scene": "res://characters/enemies/tax_man/tax_man.tscn",
+	"xp": 250,
+	"loot_table": "boss",
+	"themes": [
+		"street",
+		"club"
+	],
+	"arena": {
+		"min_width": 1800,
+		"min_depth": 300,
+		"features": [
+			"walls"
+		]
+	},
+	"moves": [
+		"combo",
+		"dash_attack",
+		"area_attack",
+		"lightning"
+	],
+	"phases": [
+		{
+			"below_health": 0.5,
+			"unlock": [
+				"lightning"
+			],
+			"stats": {
+				"damage_pct": 20
+			}
+		}
+	],
+	"intro_text": "Everybody pays."
+}

@@ -1,0 +1,13 @@
+{
+	"id": "chrome_plated",
+	"name": "Chrome-Plated",
+	"stats": {
+		"armor": 60,
+		"resist_all": 30
+	},
+	"tint": "#e0f7ff",
+	"incompatible": [
+		"base_game:armored"
+	],
+	"min_depth": 2
+}

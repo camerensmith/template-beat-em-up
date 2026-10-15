@@ -1,0 +1,260 @@
+[
+	{
+		"id": "brass_knuckles",
+		"name": "Brass Knuckles",
+		"slot": "weapon",
+		"item_type": "knuckles",
+		"level_req": 1,
+		"implicit": {
+			"damage_flat": [
+				1,
+				2
+			]
+		}
+	},
+	{
+		"id": "lead_pipe",
+		"name": "Lead Pipe",
+		"slot": "weapon",
+		"item_type": "bludgeon",
+		"level_req": 3,
+		"implicit": {
+			"damage_flat": [
+				2,
+				4
+			]
+		}
+	},
+	{
+		"id": "bike_chain",
+		"name": "Bike Chain",
+		"slot": "weapon",
+		"item_type": "flail",
+		"level_req": 5,
+		"implicit": {
+			"damage_flat": [
+				2,
+				3
+			],
+			"knockback_tier": 0
+		}
+	},
+	{
+		"id": "baseball_bat",
+		"name": "Baseball Bat",
+		"slot": "weapon",
+		"item_type": "bludgeon",
+		"level_req": 7,
+		"implicit": {
+			"damage_flat": [
+				3,
+				6
+			]
+		}
+	},
+	{
+		"id": "katana",
+		"name": "Katana",
+		"slot": "weapon",
+		"item_type": "blade",
+		"level_req": 10,
+		"implicit": {
+			"damage_flat": [
+				4,
+				7
+			],
+			"crit_chance": 3
+		}
+	},
+	{
+		"id": "bandana",
+		"name": "Bandana",
+		"slot": "head",
+		"item_type": "cloth",
+		"level_req": 1,
+		"implicit": {
+			"life": [
+				3,
+				6
+			]
+		}
+	},
+	{
+		"id": "motorcycle_helmet",
+		"name": "Motorcycle Helmet",
+		"slot": "head",
+		"item_type": "helmet",
+		"level_req": 6,
+		"implicit": {
+			"armor": [
+				8,
+				14
+			]
+		}
+	},
+	{
+		"id": "leather_jacket",
+		"name": "Leather Jacket",
+		"slot": "chest",
+		"item_type": "jacket",
+		"level_req": 1,
+		"implicit": {
+			"armor": [
+				5,
+				10
+			]
+		}
+	},
+	{
+		"id": "kevlar_vest",
+		"name": "Kevlar Vest",
+		"slot": "chest",
+		"item_type": "vest",
+		"level_req": 12,
+		"implicit": {
+			"armor": [
+				15,
+				25
+			]
+		}
+	},
+	{
+		"id": "hand_wraps",
+		"name": "Hand Wraps",
+		"slot": "gloves",
+		"item_type": "wraps",
+		"level_req": 1,
+		"implicit": {
+			"crit_chance": [
+				1,
+				2
+			]
+		}
+	},
+	{
+		"id": "fingerless_gloves",
+		"name": "Fingerless Gloves",
+		"slot": "gloves",
+		"item_type": "gloves",
+		"level_req": 1,
+		"implicit": {
+			"damage_flat": 1
+		}
+	},
+	{
+		"id": "mma_gloves",
+		"name": "MMA Gloves",
+		"slot": "gloves",
+		"item_type": "gloves",
+		"level_req": 8,
+		"implicit": {
+			"damage_flat": [
+				1,
+				2
+			],
+			"crit_chance": [
+				1,
+				2
+			]
+		}
+	},
+	{
+		"id": "studded_belt",
+		"name": "Studded Belt",
+		"slot": "belt",
+		"item_type": "belt",
+		"level_req": 1,
+		"implicit": {
+			"life": [
+				5,
+				10
+			]
+		}
+	},
+	{
+		"id": "championship_belt",
+		"name": "Championship Belt",
+		"slot": "belt",
+		"item_type": "belt",
+		"level_req": 15,
+		"implicit": {
+			"life": [
+				15,
+				25
+			]
+		}
+	},
+	{
+		"id": "sneakers",
+		"name": "Sneakers",
+		"slot": "boots",
+		"item_type": "shoes",
+		"level_req": 1,
+		"implicit": {
+			"move_speed_pct": [
+				3,
+				6
+			]
+		}
+	},
+	{
+		"id": "steel_toe_boots",
+		"name": "Steel-Toe Boots",
+		"slot": "boots",
+		"item_type": "boots",
+		"level_req": 5,
+		"implicit": {
+			"armor": [
+				6,
+				10
+			]
+		}
+	},
+	{
+		"id": "brass_ring",
+		"name": "Brass Ring",
+		"slot": "ring",
+		"item_type": "ring",
+		"level_req": 1,
+		"implicit": {}
+	},
+	{
+		"id": "signet_ring",
+		"name": "Signet Ring",
+		"slot": "ring",
+		"item_type": "ring",
+		"level_req": 10,
+		"implicit": {
+			"damage_pct": [
+				3,
+				5
+			]
+		}
+	},
+	{
+		"id": "dog_tags",
+		"name": "Dog Tags",
+		"slot": "amulet",
+		"item_type": "chain",
+		"level_req": 1,
+		"implicit": {
+			"life": [
+				5,
+				10
+			]
+		}
+	},
+	{
+		"id": "gold_chain",
+		"name": "Gold Chain",
+		"slot": "amulet",
+		"item_type": "chain",
+		"level_req": 10,
+		"implicit": {
+			"magic_find_pct": [
+				5,
+				10
+			]
+		}
+	}
+]

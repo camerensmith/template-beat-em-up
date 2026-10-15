@@ -1,0 +1,11 @@
+{
+	"id": "berserker",
+	"name": "Berserker",
+	"stats": {
+		"damage_pct": 50,
+		"move_speed_pct": 15
+	},
+	"tint": "#ff5a5a",
+	"min_depth": 0,
+	"weight": 1
+}

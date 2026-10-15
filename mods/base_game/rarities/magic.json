@@ -1,0 +1,16 @@
+{
+	"id": "magic",
+	"name": "Magic",
+	"order": 1,
+	"color": "#6a8cff",
+	"weight": 40,
+	"min_ilvl": 1,
+	"generates": "affixes",
+	"magic_find_scaling": true,
+	"affixes": {
+		"min": 1,
+		"max": 2
+	},
+	"max_prefixes": 1,
+	"max_suffixes": 1
+}

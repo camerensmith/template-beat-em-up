@@ -1,0 +1,110 @@
+[
+	{
+		"id": "loading_dock",
+		"name": "Loading Dock",
+		"theme": "factory",
+		"width": 1800,
+		"depth": 320,
+		"roles": [
+			"entry",
+			"combat",
+			"ambush"
+		],
+		"entry": [
+			"loading_dock",
+			"door",
+			"street"
+		],
+		"exit": [
+			"factory"
+		],
+		"min_depth": 0,
+		"weight": 1
+	},
+	{
+		"id": "assembly_line",
+		"name": "Assembly Line",
+		"theme": "factory",
+		"width": 2000,
+		"depth": 300,
+		"roles": [
+			"combat",
+			"ambush"
+		],
+		"entry": [
+			"factory"
+		],
+		"exit": [
+			"factory"
+		],
+		"min_depth": 0,
+		"weight": 1,
+		"features": [
+			"hazards"
+		]
+	},
+	{
+		"id": "furnace_room",
+		"name": "Furnace Room",
+		"theme": "factory",
+		"width": 2000,
+		"depth": 320,
+		"roles": [
+			"elite",
+			"combat",
+			"boss"
+		],
+		"entry": [
+			"factory"
+		],
+		"exit": [
+			"factory"
+		],
+		"min_depth": 1,
+		"weight": 1,
+		"features": [
+			"walls",
+			"hazards"
+		]
+	},
+	{
+		"id": "foreman_office",
+		"name": "Foreman's Office",
+		"theme": "factory",
+		"width": 1000,
+		"depth": 240,
+		"roles": [
+			"event",
+			"shop"
+		],
+		"entry": [
+			"factory"
+		],
+		"exit": [
+			"factory"
+		],
+		"min_depth": 0,
+		"weight": 1
+	},
+	{
+		"id": "slaughterhouse_floor",
+		"name": "Slaughterhouse Floor",
+		"theme": "factory",
+		"width": 2600,
+		"depth": 380,
+		"roles": [
+			"boss"
+		],
+		"entry": [
+			"factory"
+		],
+		"exit": [],
+		"min_depth": 3,
+		"weight": 1,
+		"features": [
+			"walls",
+			"hooks",
+			"hazards"
+		]
+	}
+]

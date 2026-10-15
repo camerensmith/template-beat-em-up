@@ -1,0 +1,9 @@
+{
+	"id": "cycle_a",
+	"name": "A",
+	"version": "1",
+	"ragebound_api": 1,
+	"dependencies": [
+		"cycle_b"
+	]
+}

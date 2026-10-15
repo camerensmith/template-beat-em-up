@@ -1,0 +1,19 @@
+{
+	"id": "reaper_spoils",
+	"rolls": {
+		"min": 3,
+		"max": 4
+	},
+	"rarity_bonus": 8,
+	"entries": [
+		{
+			"kind": "item",
+			"weight": 80
+		},
+		{
+			"kind": "table",
+			"table": "base_game:boss",
+			"weight": 20
+		}
+	]
+}

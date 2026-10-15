@@ -1,0 +1,12 @@
+{
+	"id": "base_game",
+	"name": "Ragebound: Base Game",
+	"version": "0.1.0",
+	"ragebound_api": 1,
+	"description": "Core classes, enemies, bosses, loot and rifts. Loaded exactly like any other mod.",
+	"authors": [
+		"Ragebound"
+	],
+	"license": "MIT (data); see LICENSE_ASSETS.txt for art",
+	"load_priority": -1000
+}

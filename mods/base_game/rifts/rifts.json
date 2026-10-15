@@ -1,0 +1,136 @@
+[
+	{
+		"id": "short_rift",
+		"name": "Short Rift",
+		"description": "10-15 minute vertical slice run.",
+		"themes": [
+			"street",
+			"alley",
+			"club"
+		],
+		"base_budget": 5,
+		"budget_per_room": 1.5,
+		"elite_modifiers": {
+			"min": 1,
+			"max": 1
+		},
+		"mutators": {
+			"min": 0,
+			"max": 1
+		},
+		"weight": 2,
+		"steps": [
+			{
+				"role": "entry"
+			},
+			{
+				"role": "combat"
+			},
+			{
+				"role": "elite"
+			},
+			{
+				"role": "event",
+				"chance": 0.6
+			},
+			{
+				"role": "boss"
+			}
+		]
+	},
+	{
+		"id": "downtown_rift",
+		"name": "Downtown Rift",
+		"themes": [
+			"street",
+			"alley",
+			"club"
+		],
+		"base_budget": 6,
+		"budget_per_room": 1.5,
+		"elite_modifiers": {
+			"min": 1,
+			"max": 2
+		},
+		"mutators": {
+			"min": 0,
+			"max": 1
+		},
+		"steps": [
+			{
+				"role": "entry"
+			},
+			{
+				"role": "combat",
+				"repeat": {
+					"min": 1,
+					"max": 2
+				}
+			},
+			{
+				"role": "ambush",
+				"chance": 0.6
+			},
+			{
+				"role": "elite"
+			},
+			{
+				"role": "event",
+				"chance": 0.7
+			},
+			{
+				"role": "combat"
+			},
+			{
+				"role": "boss"
+			}
+		]
+	},
+	{
+		"id": "industrial_rift",
+		"name": "Industrial Rift",
+		"themes": [
+			"street",
+			"factory"
+		],
+		"monster_level_offset": 2,
+		"base_budget": 7,
+		"budget_per_room": 2,
+		"elite_modifiers": {
+			"min": 1,
+			"max": 3
+		},
+		"mutators": {
+			"min": 1,
+			"max": 2
+		},
+		"steps": [
+			{
+				"role": "entry"
+			},
+			{
+				"role": "combat",
+				"repeat": {
+					"min": 2,
+					"max": 3
+				}
+			},
+			{
+				"role": "elite"
+			},
+			{
+				"role": "shop",
+				"chance": 0.5
+			},
+			{
+				"role": "event"
+			},
+			{
+				"role": "combat"
+			},
+			{
+				"role": "boss"
+			}
+		]
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "street_thug",
+	"name": "Street Thug",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"archetype": "grunt",
+	"threat": 1,
+	"xp": 10,
+	"loot_table": "trash",
+	"themes": [
+		"street",
+		"alley"
+	],
+	"can_be_elite": true,
+	"min_depth": 0,
+	"weight": 3,
+	"stats": {},
+	"description": "Placeholder body: uses the Sargent scene until its own sprite pack exists."
+}

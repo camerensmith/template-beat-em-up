@@ -1,0 +1,9 @@
+{
+	"id": "missing_dependency",
+	"name": "M",
+	"version": "1",
+	"ragebound_api": 1,
+	"dependencies": [
+		"not_installed"
+	]
+}

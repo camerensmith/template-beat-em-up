@@ -1,0 +1,30 @@
+{
+	"id": "grappler",
+	"name": "Grappler",
+	"description": "Throws, slams and holds. Hits send enemies flying.",
+	"identity": "Throws, slams and holds",
+	"specializations": [
+		{
+			"id": "wrestling",
+			"name": "Wrestling",
+			"description": "Bigger throws and slams that hit whole crowds."
+		},
+		{
+			"id": "brutality",
+			"name": "Brutality",
+			"description": "Executes and life on kill."
+		}
+	],
+	"base_stats": {
+		"life": 30,
+		"armor": 10
+	},
+	"per_level": {
+		"life": 8,
+		"armor": 2
+	},
+	"starting_items": [
+		"fingerless_gloves",
+		"studded_belt"
+	]
+}

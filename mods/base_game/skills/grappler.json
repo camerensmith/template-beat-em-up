@@ -1,0 +1,84 @@
+[
+	{
+		"id": "grappler_grip",
+		"name": "Vise Grip",
+		"class": "grappler",
+		"tier": 1,
+		"max_rank": 5,
+		"stats_per_rank": {
+			"damage_pct": 4
+		},
+		"description": "Nobody slips away."
+	},
+	{
+		"id": "grappler_mass",
+		"name": "Mass",
+		"class": "grappler",
+		"tier": 1,
+		"max_rank": 5,
+		"stats_per_rank": {
+			"life": 10
+		},
+		"description": "Built like a vending machine."
+	},
+	{
+		"id": "grappler_suplex",
+		"name": "Suplex City",
+		"class": "grappler",
+		"tier": 2,
+		"max_rank": 1,
+		"stats_per_rank": {
+			"knockback_tier": 1
+		},
+		"description": "Hits launch enemies a full tier harder.",
+		"specialization": "wrestling",
+		"requires": [
+			"grappler_grip"
+		]
+	},
+	{
+		"id": "grappler_crowd",
+		"name": "Crowd Control",
+		"class": "grappler",
+		"tier": 3,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"damage_vs_elites_pct": 10
+		},
+		"description": "Big targets, bigger slams.",
+		"specialization": "wrestling",
+		"requires": [
+			"grappler_suplex"
+		]
+	},
+	{
+		"id": "grappler_brutal",
+		"name": "Bone Breaker",
+		"class": "grappler",
+		"tier": 2,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"crit_damage_pct": 15
+		},
+		"description": "Something always snaps.",
+		"specialization": "brutality",
+		"requires": [
+			"grappler_mass"
+		]
+	},
+	{
+		"id": "grappler_feast",
+		"name": "Feast",
+		"class": "grappler",
+		"tier": 3,
+		"max_rank": 3,
+		"stats_per_rank": {
+			"life_on_kill": 5
+		},
+		"description": "Every knockout feeds you.",
+		"specialization": "brutality",
+		"requires": [
+			"grappler_brutal"
+		]
+	}
+]

@@ -1,0 +1,23 @@
+{
+	"id": "runner",
+	"name": "Runner",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"archetype": "runner",
+	"threat": 1,
+	"xp": 8,
+	"loot_table": "trash",
+	"themes": [
+		"street",
+		"alley",
+		"club"
+	],
+	"can_be_elite": true,
+	"min_depth": 0,
+	"weight": 2,
+	"stats": {
+		"move_speed_pct": 30,
+		"life_pct": -30
+	},
+	"description": "Placeholder body: uses the Sargent scene until its own sprite pack exists.",
+	"tint": "#9fd8ff"
+}

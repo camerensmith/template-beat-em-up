@@ -1,0 +1,11 @@
+{
+	"id": "heavy_handed",
+	"name": "Heavy-Handed",
+	"stats": {
+		"knockback_tier": 1,
+		"damage_pct": 20
+	},
+	"tint": "#ff9a3c",
+	"min_depth": 2,
+	"weight": 1
+}

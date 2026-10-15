@@ -1,0 +1,10 @@
+{
+	"id": "set",
+	"name": "Set",
+	"order": 4,
+	"color": "#3ddc5f",
+	"weight": 1.5,
+	"min_ilvl": 8,
+	"generates": "set",
+	"magic_find_scaling": true
+}

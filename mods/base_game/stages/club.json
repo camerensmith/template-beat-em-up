@@ -1,0 +1,90 @@
+[
+	{
+		"id": "club_entrance",
+		"name": "Velvet Rope",
+		"theme": "club",
+		"width": 1400,
+		"depth": 300,
+		"roles": [
+			"entry",
+			"combat"
+		],
+		"entry": [
+			"door",
+			"street"
+		],
+		"exit": [
+			"club"
+		],
+		"min_depth": 0,
+		"weight": 1
+	},
+	{
+		"id": "club_dancefloor",
+		"name": "Dancefloor",
+		"theme": "club",
+		"width": 2200,
+		"depth": 400,
+		"roles": [
+			"combat",
+			"elite",
+			"boss",
+			"ambush"
+		],
+		"entry": [
+			"club"
+		],
+		"exit": [
+			"club",
+			"door"
+		],
+		"min_depth": 0,
+		"weight": 1,
+		"features": [
+			"walls",
+			"lights"
+		]
+	},
+	{
+		"id": "club_vip",
+		"name": "VIP Lounge",
+		"theme": "club",
+		"width": 1400,
+		"depth": 300,
+		"roles": [
+			"elite",
+			"event"
+		],
+		"entry": [
+			"club"
+		],
+		"exit": [
+			"club",
+			"door"
+		],
+		"min_depth": 1,
+		"weight": 1,
+		"features": [
+			"walls"
+		]
+	},
+	{
+		"id": "club_backroom",
+		"name": "Back Room",
+		"theme": "club",
+		"width": 1000,
+		"depth": 260,
+		"roles": [
+			"shop",
+			"event"
+		],
+		"entry": [
+			"club"
+		],
+		"exit": [
+			"club"
+		],
+		"min_depth": 0,
+		"weight": 1
+	}
+]

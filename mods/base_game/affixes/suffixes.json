@@ -1,0 +1,377 @@
+[
+	{
+		"id": "of_precision",
+		"kind": "suffix",
+		"name": "of Precision",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"crit_chance": [
+						1,
+						3
+					]
+				}
+			},
+			{
+				"min_ilvl": 9,
+				"stats": {
+					"crit_chance": [
+						4,
+						6
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_the_bear",
+		"kind": "suffix",
+		"name": "of the Bear",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 2,
+				"stats": {
+					"life_pct": [
+						3,
+						6
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"life_pct": [
+						7,
+						12
+					]
+				}
+			}
+		],
+		"slots": [
+			"chest",
+			"belt",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_leeching",
+		"kind": "suffix",
+		"name": "of Leeching",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 3,
+				"stats": {
+					"life_on_hit": [
+						1,
+						2
+					]
+				}
+			},
+			{
+				"min_ilvl": 12,
+				"stats": {
+					"life_on_hit": [
+						3,
+						4
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring"
+		]
+	},
+	{
+		"id": "of_slaughter",
+		"kind": "suffix",
+		"name": "of Slaughter",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"life_on_kill": [
+						2,
+						4
+					]
+				}
+			},
+			{
+				"min_ilvl": 9,
+				"stats": {
+					"life_on_kill": [
+						5,
+						9
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"belt",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_speed",
+		"kind": "suffix",
+		"name": "of Speed",
+		"weight": 2,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"move_speed_pct": [
+						3,
+						6
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"move_speed_pct": [
+						7,
+						12
+					]
+				}
+			}
+		],
+		"slots": [
+			"boots"
+		]
+	},
+	{
+		"id": "of_warding",
+		"kind": "suffix",
+		"name": "of Warding",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"resist_all": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"resist_all": [
+						11,
+						20
+					]
+				}
+			}
+		],
+		"slots": [
+			"head",
+			"chest",
+			"belt",
+			"boots",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_fortune",
+		"kind": "suffix",
+		"name": "of Fortune",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"magic_find_pct": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"magic_find_pct": [
+						11,
+						20
+					]
+				}
+			}
+		],
+		"slots": [
+			"head",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_greed",
+		"kind": "suffix",
+		"name": "of Greed",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"gold_find_pct": [
+						10,
+						20
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"gold_find_pct": [
+						21,
+						40
+					]
+				}
+			}
+		],
+		"slots": [
+			"gloves",
+			"belt",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_learning",
+		"kind": "suffix",
+		"name": "of Learning",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 1,
+				"stats": {
+					"xp_gain_pct": [
+						3,
+						6
+					]
+				}
+			},
+			{
+				"min_ilvl": 10,
+				"stats": {
+					"xp_gain_pct": [
+						7,
+						12
+					]
+				}
+			}
+		],
+		"slots": [
+			"head",
+			"ring",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_thorns",
+		"kind": "suffix",
+		"name": "of Thorns",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 2,
+				"stats": {
+					"thorns": [
+						1,
+						3
+					]
+				}
+			},
+			{
+				"min_ilvl": 11,
+				"stats": {
+					"thorns": [
+						4,
+						7
+					]
+				}
+			}
+		],
+		"slots": [
+			"chest",
+			"belt"
+		]
+	},
+	{
+		"id": "of_the_giant",
+		"kind": "suffix",
+		"name": "of the Giantslayer",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 5,
+				"stats": {
+					"damage_vs_bosses_pct": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 14,
+				"stats": {
+					"damage_vs_bosses_pct": [
+						11,
+						20
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"amulet"
+		]
+	},
+	{
+		"id": "of_the_hunter",
+		"kind": "suffix",
+		"name": "of the Hunter",
+		"weight": 1,
+		"tiers": [
+			{
+				"min_ilvl": 4,
+				"stats": {
+					"damage_vs_elites_pct": [
+						5,
+						10
+					]
+				}
+			},
+			{
+				"min_ilvl": 13,
+				"stats": {
+					"damage_vs_elites_pct": [
+						11,
+						20
+					]
+				}
+			}
+		],
+		"slots": [
+			"weapon",
+			"gloves",
+			"ring"
+		]
+	}
+]

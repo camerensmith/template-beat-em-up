@@ -1,0 +1,13 @@
+{
+	"id": "Bad-Enemy",
+	"name": "Bad",
+	"scene": "missing_scene.tscn",
+	"archetype": "wizard",
+	"threat": 0,
+	"xp": 1.5,
+	"loot_table": "does_not_exist",
+	"stats": {
+		"mana": 5
+	},
+	"colour": "red"
+}

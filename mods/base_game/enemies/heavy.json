@@ -1,0 +1,24 @@
+{
+	"id": "heavy",
+	"name": "Syndicate Heavy",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"archetype": "brute",
+	"threat": 3,
+	"xp": 35,
+	"loot_table": "trash",
+	"themes": [
+		"street",
+		"club",
+		"factory"
+	],
+	"can_be_elite": true,
+	"min_depth": 2,
+	"weight": 1,
+	"stats": {
+		"life_pct": 160,
+		"damage_pct": 50,
+		"armor": 25
+	},
+	"description": "Placeholder body: uses the Sargent scene until its own sprite pack exists.",
+	"tint": "#8a8a8a"
+}

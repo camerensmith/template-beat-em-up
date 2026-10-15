@@ -1,0 +1,47 @@
+{
+	"id": "chrome_reaper",
+	"name": "The Chrome Reaper",
+	"tier": "boss",
+	"scene": "res://characters/enemies/tax_man/tax_man.tscn",
+	"placeholder": true,
+	"tint": "#c0f0ff",
+	"xp": 320,
+	"loot_table": "reaper_spoils",
+	"themes": [
+		"club",
+		"street"
+	],
+	"arena": {
+		"min_width": 2000,
+		"min_depth": 320,
+		"features": [
+			"walls"
+		]
+	},
+	"moves": [
+		"scythe_sweep",
+		"chrome_dash"
+	],
+	"phases": [
+		{
+			"below_health": 0.6,
+			"stats": {
+				"damage_pct": 20
+			}
+		},
+		{
+			"below_health": 0.25,
+			"unlock": [
+				"overclock"
+			],
+			"stats": {
+				"move_speed_pct": 30
+			}
+		}
+	],
+	"stats": {
+		"life_pct": 30,
+		"armor": 40
+	},
+	"intro_text": "Your number's up."
+}

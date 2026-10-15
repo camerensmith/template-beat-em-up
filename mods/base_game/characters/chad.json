@@ -1,0 +1,7 @@
+{
+	"id": "chad",
+	"name": "Chad",
+	"default_class": "brawler",
+	"description": "The template's playable fighter. Any class can be played on this body until more fighters ship.",
+	"scene": "res://characters/playable/chad/chad.tscn"
+}

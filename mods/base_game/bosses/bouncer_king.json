@@ -1,0 +1,27 @@
+{
+	"id": "bouncer_king",
+	"name": "Big Lou, King of the Door",
+	"tier": "miniboss",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"tint": "#b07cff",
+	"xp": 90,
+	"loot_table": "miniboss",
+	"themes": [
+		"club",
+		"street"
+	],
+	"arena": {
+		"min_width": 1200,
+		"min_depth": 240
+	},
+	"moves": [
+		"haymaker",
+		"shoulder_charge"
+	],
+	"stats": {
+		"life_pct": 400,
+		"damage_pct": 60,
+		"armor": 20
+	},
+	"intro_text": "Not on the list."
+}

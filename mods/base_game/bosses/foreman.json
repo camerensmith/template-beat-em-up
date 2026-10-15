@@ -1,0 +1,35 @@
+{
+	"id": "foreman",
+	"name": "The Foreman",
+	"tier": "miniboss",
+	"scene": "res://characters/enemies/sargent/sarge.tscn",
+	"tint": "#ffd84a",
+	"xp": 100,
+	"loot_table": "miniboss",
+	"themes": [
+		"factory"
+	],
+	"arena": {
+		"min_width": 1400,
+		"min_depth": 260
+	},
+	"moves": [
+		"wrench_swing",
+		"whistle_adds"
+	],
+	"phases": [
+		{
+			"below_health": 0.4,
+			"unlock": [
+				"whistle_adds"
+			]
+		}
+	],
+	"stats": {
+		"life_pct": 350,
+		"damage_pct": 50,
+		"armor": 30
+	},
+	"min_depth": 1,
+	"intro_text": "Break's over."
+}

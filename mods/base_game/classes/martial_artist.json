@@ -1,0 +1,29 @@
+{
+	"id": "martial_artist",
+	"name": "Martial Artist",
+	"description": "Fast strikes, launchers and juggles.",
+	"identity": "Fast strikes, launchers and juggles",
+	"specializations": [
+		{
+			"id": "dragon",
+			"name": "Dragon",
+			"description": "Fire-infused launchers."
+		},
+		{
+			"id": "shadow",
+			"name": "Shadow",
+			"description": "Critical strikes from the flanks."
+		}
+	],
+	"base_stats": {
+		"crit_chance": 5,
+		"move_speed_pct": 10
+	},
+	"per_level": {
+		"life": 5,
+		"crit_chance": 0.5
+	},
+	"starting_items": [
+		"hand_wraps"
+	]
+}

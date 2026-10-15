@@ -1,0 +1,39 @@
+{
+	"id": "neon_nights",
+	"name": "Neon Nights",
+	"themes": [
+		"club",
+		"street"
+	],
+	"base_budget": 6,
+	"budget_per_room": 1.5,
+	"elite_modifiers": {
+		"min": 1,
+		"max": 2
+	},
+	"mutators": {
+		"min": 1,
+		"max": 1
+	},
+	"steps": [
+		{
+			"role": "entry"
+		},
+		{
+			"role": "combat",
+			"repeat": {
+				"min": 1,
+				"max": 2
+			}
+		},
+		{
+			"role": "elite"
+		},
+		{
+			"role": "combat"
+		},
+		{
+			"role": "boss"
+		}
+	]
+}

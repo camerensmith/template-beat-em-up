@@ -1,0 +1,10 @@
+{
+	"id": "vampiric",
+	"name": "Vampiric",
+	"stats": {
+		"life_on_hit": 5
+	},
+	"tint": "#b45aff",
+	"min_depth": 1,
+	"weight": 1
+}

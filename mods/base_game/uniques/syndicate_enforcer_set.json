@@ -1,0 +1,56 @@
+[
+	{
+		"id": "syndicate_knuckles",
+		"name": "Syndicate Knuckles",
+		"base": "brass_knuckles",
+		"rarity": "set",
+		"set": "syndicate_enforcer",
+		"min_ilvl": 8,
+		"stats": {
+			"damage_flat": [
+				3,
+				4
+			],
+			"damage_pct": [
+				10,
+				15
+			]
+		}
+	},
+	{
+		"id": "syndicate_jacket",
+		"name": "Syndicate Jacket",
+		"base": "leather_jacket",
+		"rarity": "set",
+		"set": "syndicate_enforcer",
+		"min_ilvl": 8,
+		"stats": {
+			"armor": [
+				20,
+				30
+			],
+			"life": [
+				15,
+				25
+			]
+		}
+	},
+	{
+		"id": "syndicate_boots",
+		"name": "Syndicate Boots",
+		"base": "steel_toe_boots",
+		"rarity": "set",
+		"set": "syndicate_enforcer",
+		"min_ilvl": 8,
+		"stats": {
+			"armor": [
+				10,
+				15
+			],
+			"move_speed_pct": [
+				5,
+				8
+			]
+		}
+	}
+]
